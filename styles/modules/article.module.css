@@ -4,11 +4,16 @@
     height: 100%;
     border-radius: 8px;
     border: 1px solid var(--color4);
+    background-color: var(--color2);
+    box-shadow: black 0px 3px 5px 0px;
 }
 
 .card2 {
     border-radius: 8px;
     border: 1px solid var(--color4);
+    background-color: var(--color2);
+    
+    box-shadow: black 0px 3px 5px 0px
 }
 
 .card2:nth-child(2) {
@@ -19,6 +24,9 @@
     width: 100%;
     border-radius: 8px;
     border: 1px solid var(--color4);
+    background-color: var(--color2);
+    
+    box-shadow: black 0px 3px 5px 0px
 }
 
 .ul {

@@ -5,12 +5,16 @@
     justify-content: center;
     gap: 16px;
     flex-grow: 2;
-    padding: 20px;
 }
 
 .sub {
     display: block;
     flex: 1;
+}
+
+.title {
+    color: var(--color5);
+    padding: 12px 0;
 }
 
 @media screen and (max-width:1200px) {

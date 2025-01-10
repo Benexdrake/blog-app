@@ -1,10 +1,11 @@
 import styles from '@/styles/modules/article.module.css';
+import { Article,Tag } from '@/types/article';
 
-export let Article = (props: any) => {
-
-
+export let ArticleBlock = (props: any) => 
+{
     const type = props.type;
-    console.log(type)
+    const article = props.article as Article;
+    
 
     let a = "";
     let card = "";
@@ -24,19 +25,18 @@ export let Article = (props: any) => {
             card = styles.card3;
     }
 
-
     return (
-        <div className={card}>
+        <div className={card} id={`${article.id}`}>
             <a href="" className={a}>
                 <div className={styles.image} style={{ backgroundImage: 'url("https://placehold.co/600x400")' }}></div>
                 <div className={styles.content}>
-                    <span className={styles.date}>Sunday, 1 Jan 2023</span>
-                    <h3>UX review presentations</h3>
-                    <p className={styles.description}>How do you create compelling presantations that wow your colleagues and impress your managers?</p>
+                    <span className={styles.date}>{article.author} {article.date}</span>
+                    <h3>{article.title}</h3>
+                    <p className={styles.description}>{article.content}</p>
                     <ul className={styles.ul}>
-                        <li><span className={styles.tag}>Design</span></li>
-                        <li><span className={styles.tag}>Research</span></li>
-                        <li><span className={styles.tag}>Presantation</span></li>
+                        {article.tags.map((tag:Tag)=> {return (
+                            <li><span id={`${tag.id}`} className={styles.tag} style={{backgroundColor:tag.bgColor, color:tag.textColor}}>{tag.name}</span></li>
+                        )})}
                     </ul>
                 </div>
             </a>
