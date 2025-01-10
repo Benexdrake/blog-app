@@ -6,9 +6,8 @@ export let ArticleBlock = (props: any) =>
     const type = props.type;
     const article = props.article as Article;
     
-
     let a = "";
-    let card = "";
+    let card = "card ";
 
     switch (type) {
         case 1:
@@ -25,7 +24,7 @@ export let ArticleBlock = (props: any) =>
     }
 
     return (
-        <div className={card} id={`${article.id}`}>
+        <div className={card + ' ' + styles.card} key={`${article.id}`}>
             <a href="" className={a}>
                 <div className={styles.image} style={{ backgroundImage: `url("./assets/images/${article.image.src}")` }}></div>
                 <div className={styles.content}>
@@ -34,7 +33,7 @@ export let ArticleBlock = (props: any) =>
                     <p className={styles.description}>{article.content}</p>
                     <ul className={styles.ul}>
                         {article.tags.map((tag:Tag)=> {return (
-                            <li><span id={`${tag.id}`} className={styles.tag} style={{backgroundColor:tag.bgColor, color:tag.textColor}}>{tag.name}</span></li>
+                            <li><span key={`${tag.id}`} className={styles.tag} style={{backgroundColor:tag.bgColor, color:tag.textColor}}>{tag.name}</span></li>
                         )})}
                     </ul>
                 </div>

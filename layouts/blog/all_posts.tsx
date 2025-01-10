@@ -5,7 +5,6 @@ import { Article } from '@/types/article'
 export let AllPosts = (props:any) => 
 {
     const articles = props.articles as Article[]
-    console.log(articles.length)
 
     return (
         <div>

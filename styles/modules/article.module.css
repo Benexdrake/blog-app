@@ -1,15 +1,12 @@
-.card1{
-    height: 100%;
+.card {
     border-radius: 8px;
     background-color: var(--color2);
     box-shadow: var(--color5) 0px 3px 5px 0px;
 }
 
-.card2 {
-    border-radius: 8px;
-    background-color: var(--color2);
+.card1{
+    height: 100%;
     
-    box-shadow: var(--color5) 0px 3px 5px 0px
 }
 
 .card2:nth-child(2) {
@@ -18,10 +15,7 @@
 
 .card3 {
     width: 100%;
-    border-radius: 8px;
-    background-color: var(--color2);
-    
-    box-shadow: var(--color5) 0px 3px 5px 0px
+
 }
 
 .ul {
@@ -77,19 +71,24 @@
 .content {
     padding: 16px;
     color: var();
-    max-width: 50%;
     min-height: 200px;
     display: grid;
     align-items:stretch;
+    
+}
+
+.a3 .content {
+    width: 50%;
 }
 
 .a1 .content {
     max-width: 100%;
-    
 }
 
 .date {
-   
+   color: var(--color5);
+   font-weight: bolder;
+   text-align: end;
 }
 
 .description {
@@ -102,13 +101,13 @@
     background-color: var(--color2)
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1350px) {
     .a3 .image {
         width: 50%;
     }
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1350px) {
     .card1 {
         max-width: 100%;
     }
@@ -119,11 +118,19 @@
 
     .a3 .image {
         background-size: cover;
+        height: 200px;
+    }
+
+    .a2 .content {
+        width: 50%;
+    }
+
+    .a3 .content {
+        width: 100%;
     }
 
     .a3 {
         display: block;
-        
         height: 100%;
     }
 }

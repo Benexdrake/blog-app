@@ -8,11 +8,9 @@ import styles from '@/styles/modules/header.module.css'
 export default function Home(props:any)
 {
   const articles = props.articles;
-
-
   return (
    <div className="main">
-     <Header styles={styles}/>
+     <Header styles={styles} header='the blog'/>
      <br />
      <RecentPosts articles={articles.slice(0,4)}/>
      <br />
@@ -25,7 +23,6 @@ export default function Home(props:any)
 export async function getStaticProps()
 {
   const articles = await getAllArticles();
-  console.log('Hello')
   return {
     props: {
       articles
