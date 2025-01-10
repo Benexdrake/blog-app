@@ -1,4 +1,5 @@
 import { Header } from "@/components/header/header";
+import { AllPosts } from "@/layouts/blog/all_posts";
 import { RecentPosts } from "@/layouts/blog/recent_posts";
 import { getAllArticles } from "@/services/article_service";
 
@@ -15,7 +16,7 @@ export default function Home(props:any)
      <br />
      <RecentPosts articles={articles.slice(0,4)}/>
      <br />
-     All Blog Posts Layout
+     <AllPosts articles={articles}/>
    </div>
   );
 }

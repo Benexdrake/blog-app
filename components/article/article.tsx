@@ -9,7 +9,6 @@ export let ArticleBlock = (props: any) =>
 
     let a = "";
     let card = "";
-    // let image = styles.image;
 
     switch (type) {
         case 1:
@@ -28,7 +27,7 @@ export let ArticleBlock = (props: any) =>
     return (
         <div className={card} id={`${article.id}`}>
             <a href="" className={a}>
-                <div className={styles.image} style={{ backgroundImage: 'url("https://placehold.co/600x400")' }}></div>
+                <div className={styles.image} style={{ backgroundImage: `url("./assets/images/${article.image.src}")` }}></div>
                 <div className={styles.content}>
                     <span className={styles.date}>{article.author} {article.date}</span>
                     <h3>{article.title}</h3>

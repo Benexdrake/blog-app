@@ -1,0 +1,10 @@
+.title {
+    color: var(--color5);
+    padding: 12px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+}

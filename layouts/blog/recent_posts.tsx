@@ -8,7 +8,7 @@ export let RecentPosts = (props:any) =>
         <>
         <h1 className={styles.title}>All Recent Posts</h1>
         <div className={styles.main}>
-            <div>
+            <div className={styles.first}>
                 {articles.length > 0 && <ArticleBlock type={1} article={articles[0]}/>}
             </div>
             <div className={styles.sub}>
