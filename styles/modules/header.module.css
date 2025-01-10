@@ -1,0 +1,11 @@
+.header {
+    font-size: 8rem;
+    text-align: center;
+    color: var(--color5);
+    margin: 40px 0;
+    text-transform: uppercase;
+}
+
+.hr {
+    color: var(--color4);
+}
