@@ -1,7 +1,7 @@
 .main {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid var(--color5);
+    /* border: 1px solid var(--color5); */
     justify-content: center;
     gap: 16px;
     flex-grow: 2;
@@ -11,4 +11,15 @@
 .sub {
     display: block;
     flex: 1;
+}
+
+@media screen and (max-width:1200px) {
+    .main {
+        display: block;
+    }
+
+    .sub {
+        margin: 16px 0;
+    }
+    
 }
