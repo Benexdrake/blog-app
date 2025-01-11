@@ -1,6 +1,7 @@
 import styles from '@/styles/modules/project.module.css';
 import { Project } from '@/types/project';
 
+
 export let ProjectCard = (props: any) => 
 {
     const type = props.type;

@@ -4,7 +4,7 @@ import styles from '@/styles/modules/recent.module.css'
 export let RecentPosts = (props:any) => 
 {
     const projects = props.projects;
-    console.log(projects)
+    
     return (
         <>
         <h1 className={styles.title}>All Recent Posts</h1>

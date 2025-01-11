@@ -1,11 +1,12 @@
 import { Header } from "@/components/header/header";
 import { AllPosts } from "@/layouts/blog/all_posts";
 import { RecentPosts } from "@/layouts/blog/recent_posts";
-import { getAllArticles } from "@/services/article_service";
+import { useSearchParams } from 'next/navigation'
 
 import styles from '@/styles/modules/header.module.css'
 import { Project } from "@/types/project";
 import axios from "axios";
+import { GetServerSidePropsContext } from "next";
 
 export default function Home(props:any)
 {
@@ -23,9 +24,10 @@ export default function Home(props:any)
 }
 
 
-export async function getStaticProps(props:any)
+export async function getServerSideProps(context:GetServerSidePropsContext)
 {
-  const projects = await axios.get('http://localhost:3000/api/github').then((x:any) => {return x.data})
+  // console.log(context.req.headers.host)
+  const projects = await axios.get(`http://${context.req.headers.host}/api/github`).then((x:any) => {return x.data})
   
   return {
     props: {
