@@ -27,7 +27,7 @@ export let ProjectCard = (props: any) =>
     return (
         <div className={card + ' ' + styles.card} key={`${project.id}`}>
             <a href={project.url} className={a}>
-            <span className={styles.date}>{new Date(project.lastUpdate).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span>
+            <span className={styles.date}>{new Date(project.lastUpdate).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})}</span>
                 <div className={styles.image} style={{ backgroundImage: `url("https://placehold.co/600x400")` }}></div>
                 <div className={styles.content}>
                     {/* <span className={styles.date}>{new Date(project.lastUpdate).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span> */}

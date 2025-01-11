@@ -104,6 +104,7 @@
 
 .description {
     text-wrap: wrap;
+    max-width: 350px;
 }
 
 .tag {

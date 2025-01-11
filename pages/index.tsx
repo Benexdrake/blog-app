@@ -26,7 +26,6 @@ export default function Home(props:any)
 
 export async function getServerSideProps(context:GetServerSidePropsContext)
 {
-  // console.log(context.req.headers.host)
   const projects = await axios.get(`http://${context.req.headers.host}/api/github`).then((x:any) => {return x.data})
   
   return {
