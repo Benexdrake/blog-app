@@ -1,16 +1,18 @@
-import { ArticleBlock } from '@/components/article/article'
+import { ProjectCard } from '@/components/article/projectCard'
 import styles from '@/styles/modules/all_posts.module.css'
-import { Article } from '@/types/article'
+import { Project } from '@/types/project'
 
 export let AllPosts = (props:any) => 
 {
-    const articles = props.articles as Article[]
+    const projects = props.projects as Project[]
 
     return (
         <div>
             <h1 className={styles.title}>All Blog Posts</h1>
             <div className={styles.grid}>
-                {articles.map((a:Article) => {return (<ArticleBlock article={a} type={1}/>)})}
+                {projects.map((a:Project) => {return (
+                    <ProjectCard project={a} type={1}/>
+                    )})}
             </div>
         </div>
     )

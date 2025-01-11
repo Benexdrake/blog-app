@@ -25,6 +25,7 @@
     padding: 0;
     gap: 8px;
     padding-top: 8px;
+    justify-content: space-between;
 }
 
 .a1 {
@@ -88,6 +89,17 @@
    color: var(--color5);
    font-weight: bolder;
    text-align: end;
+   position:absolute;
+   padding: 10px;
+   margin: 10px;
+   background-color: var(--color4);
+   border-radius: 4px;
+   color: var(--color1);
+}
+
+.title {
+    text-shadow: var(--color4) 0px 3px 5px;
+    font-size: 1.5rem;
 }
 
 .description {
@@ -96,8 +108,10 @@
 
 .tag {
     padding: 4px;
-    border: 1px solid aliceblue;
-    background-color: var(--color2)
+    border: 1px solid var(--color4);
+    border-radius: 4px;
+    background-color: var(--color5);
+    color: var(--color1);
 }
 
 @media screen and (min-width:1350px) {

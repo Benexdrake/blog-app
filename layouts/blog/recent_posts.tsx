@@ -1,22 +1,22 @@
-import { ArticleBlock } from "@/components/article/article";
+import { ProjectCard } from "@/components/article/projectCard";
 import styles from '@/styles/modules/recent.module.css'
 
 export let RecentPosts = (props:any) => 
 {
-    const articles = props.articles;
+    const projects = props.projects;
+    console.log(projects)
     return (
         <>
         <h1 className={styles.title}>All Recent Posts</h1>
         <div className={styles.main}>
             <div className={styles.first}>
-                {articles.length > 0 && <ArticleBlock type={1} article={articles[0]}/>}
+                {projects.length > 0 && <ProjectCard type={1} project={projects[0]}/>}
             </div>
             <div className={styles.sub}>
-            {articles.length > 1 && <ArticleBlock type={2} article={articles[1]}/>}
-                
-            {articles.length > 2 && <ArticleBlock type={2} article={articles[2]}/>}
+                {projects.length > 0 && <ProjectCard type={2} project={projects[1]}/>}
+                {projects.length > 0 && <ProjectCard type={2} project={projects[2]}/>}
             </div>
-            {articles.length > 3 && <ArticleBlock type={3} article={articles[3]}/>}
+            {projects.length > 0 && <ProjectCard type={3} project={projects[3]}/>}
         </div>
        
         </>

@@ -4,28 +4,32 @@ import { RecentPosts } from "@/layouts/blog/recent_posts";
 import { getAllArticles } from "@/services/article_service";
 
 import styles from '@/styles/modules/header.module.css'
+import { Project } from "@/types/project";
+import axios from "axios";
 
 export default function Home(props:any)
 {
-  const articles = props.articles;
+  const projects = props.projects as Project[];
+
   return (
    <div className="main">
-     <Header styles={styles} header='the blog'/>
+     <Header styles={styles} header='projects'/>
      <br />
-     <RecentPosts articles={articles.slice(0,4)}/>
+     <RecentPosts projects={projects.slice(0,4)}/>
      <br />
-     <AllPosts articles={articles}/>
+     <AllPosts projects={projects.slice(4, projects.length)}/>
    </div>
   );
 }
 
 
-export async function getStaticProps()
+export async function getStaticProps(props:any)
 {
-  const articles = await getAllArticles();
+  const projects = await axios.get('http://localhost:3000/api/github').then((x:any) => {return x.data})
+  
   return {
     props: {
-      articles
+      projects
     }
   }
 };
