@@ -1,7 +1,7 @@
 .card {
     border-radius: 8px;
     background-color: var(--color2);
-    box-shadow: var(--color5) 0px 3px 5px 0px;
+    box-shadow: var(--color4) 0px 3px 5px 0px;
 }
 
 .card1{
@@ -29,7 +29,7 @@
 
 .a1 {
     display: block;
-    color: var(--color5);
+    color: var(--color4);
     text-decoration: none;
 }
 
@@ -37,14 +37,14 @@
 .a2 {
     display: flex;
     flex-wrap: wrap;
-    color: var(--color5);
+    color: var(--color4);
     text-decoration: none;
 }
 
 .a3 {
     display: flex;
     flex-wrap: wrap;
-    color: var(--color5);
+    color: var(--color4);
     text-decoration: none;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .date {
-   color: var(--color5);
+   color: var(--color4);
    font-weight: bolder;
    text-align: end;
 }

@@ -36,7 +36,7 @@ export let ProjectCard = (props: any) =>
                     <ul className={styles.ul}>
                         <li>
                             <span className={styles.tag}>
-                                Created At: {new Date(project.createdAt).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}
+                                {new Date(project.createdAt).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}
                             </span>
                         </li>
                         <li>
