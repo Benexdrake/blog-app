@@ -1,5 +1,8 @@
+import { getImage } from '@/helpers/helper';
 import styles from '@/styles/modules/project.module.css';
 import { Project } from '@/types/project';
+
+
 
 
 export let ProjectCard = (props: any) => 
@@ -28,7 +31,7 @@ export let ProjectCard = (props: any) =>
         <div className={card + ' ' + styles.card} key={`${project.id}`}>
             <a href={project.url} className={a}>
             <span className={styles.date}>{new Date(project.lastUpdate).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})}</span>
-                <div className={styles.image} style={{ backgroundImage: `url("https://placehold.co/600x400")` }}></div>
+                <div className={styles.image} style={{ backgroundImage: `url("${getImage(project.language)}")` }}></div>
                 <div className={styles.content}>
                     {/* <span className={styles.date}>{new Date(project.lastUpdate).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}</span> */}
                     <h3 className={styles.title}>{project.name.replace('_',' ').replace('-',' ')}</h3>
