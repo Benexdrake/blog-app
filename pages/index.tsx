@@ -16,6 +16,9 @@ export default function Home(props:any)
   return (
    <div className="main">
      <Header styles={styles} header='projects'/>
+
+    
+
     {
       page == 1 ?
       <>
