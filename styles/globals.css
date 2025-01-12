@@ -30,3 +30,9 @@ body {
   width: 1200px;
   margin: auto;
 }
+
+@media screen and (max-width:1350px) {
+  .main {
+    width: 800px;
+  }
+}
