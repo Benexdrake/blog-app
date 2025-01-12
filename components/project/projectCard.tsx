@@ -1,5 +1,5 @@
 import { getImage } from '@/helpers/helper';
-import styles from '@/styles/modules/github/project.module.css';
+import styles from '@/styles/modules/card.module.css';
 import { Project } from '@/types/project';
 
 
