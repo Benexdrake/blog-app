@@ -12,13 +12,11 @@ export default function Home(props:any)
 {
   const projects = props.projects as Project[];
   const page = props.page as number;
+  const max_repos = props.max_repos;
 
   return (
    <div className="main">
      <Header styles={styles} header='projects'/>
-
-    
-
     {
       page == 1 ?
       <>
@@ -37,16 +35,15 @@ export default function Home(props:any)
   );
 }
 
-
 export async function getServerSideProps(context:GetServerSidePropsContext)
 {
-  // console.log(context.req.url);
   let page = context.query.page || 1
-  const projects = await axios.get(`http://${context.req.headers.host}/api/github?page=${page}`).then((x:any) => {return x.data})
+  const response = await axios.get(`http://${context.req.headers.host}/api/github?page=${page}`).then((x:any) => {return x.data})
   
   return {
     props: {
-      projects,
+      max_repos: response.max_repos,
+      projects:response.repos,
       page
     }
   }

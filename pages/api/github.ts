@@ -11,6 +11,14 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
     auth: process.env.Github_Secret
   });
 
+  const user_response = await octo.request('GET /user', {
+    owner: process.env.Github_User,
+    headers: {
+      'X-GitHub-Api-Version': '2022-11-28'
+    }
+  });
+  let u = user_response.data;
+
   const response = await octo.request('GET /user/repos/', {
     per_page:9,
     page,
@@ -37,5 +45,5 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 
     repos.push(repo)
   }
-  res.status(200).json(repos);
+  res.status(200).json({max_repos: u.public_repos, repos});
 }
