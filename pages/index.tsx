@@ -23,7 +23,7 @@ export default function Home(props:any)
       <br />
       <RecentPosts projects={projects.slice(0,3)}/>
       <br />
-      <AllPosts projects={projects.slice(3, projects.length)}/>
+      {/* <AllPosts projects={projects.slice(3, projects.length)}/> */}
       </>
       :
       <>

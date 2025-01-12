@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/article/projectCard";
+import { ProjectCard } from "@/components/project/projectCard";
 import styles from '@/styles/modules/recent.module.css'
 
 export let RecentPosts = (props:any) => 
