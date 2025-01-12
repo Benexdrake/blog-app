@@ -11,14 +11,25 @@ import { GetServerSidePropsContext } from "next";
 export default function Home(props:any)
 {
   const projects = props.projects as Project[];
+  const page = props.page as number;
 
   return (
    <div className="main">
      <Header styles={styles} header='projects'/>
+    {
+      page == 1 ?
+      <>
+      <br />
+      <RecentPosts projects={projects.slice(0,3)}/>
+      <br />
+      <AllPosts projects={projects.slice(3, projects.length)}/>
+      </>
+      :
+      <>
      <br />
-     <RecentPosts projects={projects.slice(0,4)}/>
-     <br />
-     <AllPosts projects={projects.slice(4, projects.length)}/>
+     <AllPosts projects={projects}/> 
+      </>
+    }
    </div>
   );
 }
@@ -26,11 +37,14 @@ export default function Home(props:any)
 
 export async function getServerSideProps(context:GetServerSidePropsContext)
 {
-  const projects = await axios.get(`http://${context.req.headers.host}/api/github`).then((x:any) => {return x.data})
+  // console.log(context.req.url);
+  let page = context.query.page || 1
+  const projects = await axios.get(`http://${context.req.headers.host}/api/github?page=${page}`).then((x:any) => {return x.data})
   
   return {
     props: {
-      projects
+      projects,
+      page
     }
   }
 };

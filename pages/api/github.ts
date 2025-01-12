@@ -5,14 +5,14 @@ import { Octokit } from "octokit";
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) 
 {
-  const page = req.query.page || 1;
+  const page = req.query.page
 
   const octo = new Octokit({
     auth: process.env.Github_Secret
   });
 
   const response = await octo.request('GET /user/repos/', {
-    per_page:10,
+    per_page:9,
     page,
     sort:'updated',
     headers: {
@@ -24,9 +24,6 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 
   for(let rd of response.data)
   {
-    // if(rd.name === process.env.Github_User)
-    //   continue;
-
     const repo:Project = 
     {
       id: rd.id,
@@ -35,7 +32,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
       createdAt:new Date(rd.created_at),
       description:rd.description || 'Placeholder Text',
       lastUpdate:new Date(rd.updated_at),
-      language:rd.language || 'Placeholder Language'
+      language:rd.language || 'Language'
     }
 
     repos.push(repo)
