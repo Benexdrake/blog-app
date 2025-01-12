@@ -1,8 +1,9 @@
 .card {
     border-radius: 8px;
-    background-color: var(--color2);
-    box-shadow: var(--color4) 0px 3px 5px 0px;
+    background-color: var(--color4);
+    box-shadow: var(--color3) 0px 3px 5px 0px;
     height: 100%;
+    min-height: 350px;
     display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(2,1fr);
@@ -11,6 +12,7 @@
 .card_vertical {
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(1,1fr);
+    min-height: 180px;
 }
 
 .image {
@@ -22,7 +24,6 @@
 
 .card_vertical .image {
     border-radius: 8px 0px 0px 8px;
-    height: 100%;
 }
 
 .content {
@@ -30,7 +31,6 @@
 }
 
 .date {
-    color: var(--color4);
     font-weight: bolder;
     text-align: end;
     position:absolute;
@@ -41,23 +41,20 @@
     color: var(--color1);
 }
 
-
-
-
-
-
-
-/* .card1{
-    height: 416px;
+.title {
+    text-shadow: var(--color3) 0px 3px 5px;
+    color: var(--color1);
+    font-size: 1.5rem;
+    text-align: center;
+    position: relative;
+    top: -15%;
 }
 
-.card2:nth-child(2) {
-    margin-top: 16px;
-}
-
-.card3 {
-    width: 100%;
-
+.description {
+    padding: 8px 0;
+    text-wrap: wrap;
+    max-width: 350px;
+    color: var(--color1);
 }
 
 .ul {
@@ -68,126 +65,29 @@
     gap: 8px;
     padding-top: 8px;
     justify-content: space-between;
-}
-
-.a1 {
-    display: block;
-    color: var(--color4);
-    text-decoration: none;
-}
-
-
-.a2 {
-    display: flex;
-    flex-wrap: wrap;
-    color: var(--color4);
-    text-decoration: none;
-}
-
-.a3 {
-    display: flex;
-    flex-wrap: wrap;
-    color: var(--color4);
-    text-decoration: none;
-}
-
-.image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 8px 8px 0 0;
-}
-
-.a1 .image {
-    height: 200px;
-}
-
-.a2 .image {
-    width: 200px;
-    border-radius: 8px 0 0 8px;
-}
-
-.a3 .image {
-    border-radius: 8px 0 0 8px;
-}
-
-.content {
-    padding: 16px;
-    padding-bottom: 0;
-    color: var();
-    min-height: 200px;
-    display: grid;
-    align-items:stretch;
-}
-
-.a3 .content {
-    width: 50%;
-}
-
-.a1 .content {
-    max-width: 100%;
-}
-
-.date {
-   color: var(--color4);
-   font-weight: bolder;
-   text-align: end;
-   position:absolute;
-   padding: 10px;
-   margin: 10px;
-   background-color: var(--color4);
-   border-radius: 4px;
-   color: var(--color1);
-}
-
-.title {
-    text-shadow: var(--color4) 0px 3px 5px;
-    font-size: 1.5rem;
-}
-
-.description {
-    text-wrap: wrap;
-    max-width: 350px;
+    position:relative;
+    top: 85%;
 }
 
 .tag {
     padding: 4px;
     border: 1px solid var(--color4);
     border-radius: 4px;
-    background-color: var(--color4);
-    color: var(--color1);
+    background-color: var(--color2);
+    color: var(--color4);
+    box-shadow: var(--color3) 0px 3px 5px 0px;
 }
 
-@media screen and (min-width:1350px) {
-    .a3 .image {
-        width: 50%;
-    }
+
+
+
+
+
+/* @media screen and (min-width:1350px) {
+
 }
 
 @media screen and (max-width:1350px) {
-    .card1 {
-        max-width: 100%;
-    }
 
-    .a1 .image {
-        background-size: cover;
-    }
-
-    .a3 .image {
-        background-size: cover;
-        height: 200px;
-    }
-
-    .a2 .content {
-        width: 50%;
-    }
-
-    .a3 .content {
-        width: 100%;
-    }
-
-    .a3 {
-        display: block;
-        height: 100%;
-    }
+    
 } */

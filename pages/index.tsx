@@ -21,9 +21,9 @@ export default function Home(props:any)
       page == 1 ?
       <>
       <br />
-      <RecentPosts projects={projects.slice(0,3)}/>
+      <RecentPosts projects={projects.slice(0,4)}/>
       <br />
-      {/* <AllPosts projects={projects.slice(3, projects.length)}/> */}
+      <AllPosts projects={projects.slice(3, projects.length)}/>
       </>
       :
       <>

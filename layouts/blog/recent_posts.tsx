@@ -16,7 +16,6 @@ export let RecentPosts = (props:any) =>
                 {projects.length > 0 && <ProjectCard type={2} project={projects[1]}/>}
                 {projects.length > 0 && <ProjectCard type={2} project={projects[2]}/>}
             </div>
-            {/* {projects.length > 0 && <ProjectCard type={3} project={projects[3]}/>} */}
         </div>
        
         </>
