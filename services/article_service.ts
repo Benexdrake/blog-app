@@ -9,7 +9,7 @@ const articles = [
       title: "I ♥ Javascript",
       content: "This is the content of article 1",
       image: {
-        src: "javascript.jpg",
+        src: "JS.jpg",
         alt: "I love Javascript",
       },
       link: "#i-love-javascript",
@@ -42,7 +42,7 @@ const articles = [
       title: "CSS is Awesome",
       content: "This is the content of article 2",
       image: {
-        src: "love.jpg",
+        src: "TS.jpg",
         alt: "Picture with Love",
       },
       teaser: "This is the reason why I love CSS!",
@@ -74,7 +74,7 @@ const articles = [
       title: "HTML is Cool",
       content: "This is the content of article 3",
       image: {
-        src: "nodejs.jpg",
+        src: "HTML.jpg",
         alt: "Picture with code",
       },
       teaser: "This is the reason why I love HTML!",
@@ -106,7 +106,7 @@ const articles = [
       title: "React is the Best",
       content: "This is the content of article 4",
       image: {
-        src: "remote.jpg",
+        src: "CSharp.jpg",
         alt: "View from window to a river",
       },
       teaser: "This is the reason why I love React!",
@@ -138,7 +138,7 @@ const articles = [
         title: "React is the Best",
         content: "This is the content of article 4",
         image: {
-          src: "remote.jpg",
+          src: "Python.png",
           alt: "View from window to a river",
         },
         teaser: "This is the reason why I love React!",
