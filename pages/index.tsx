@@ -1,14 +1,20 @@
 import { Header } from "@/components/header/header";
 import { AllPosts } from "@/layouts/blog/all_posts";
 import { RecentPosts } from "@/layouts/blog/recent_posts";
-import { useSearchParams } from 'next/navigation'
 
 import styles from '@/styles/modules/header.module.css'
 import { Project } from "@/types/project";
 import axios from "axios";
 import { GetServerSidePropsContext } from "next";
 
-export default function Home(props:any)
+interface ProjectsProps
+{
+  projects:Project[];
+  page:number;
+  max_repos:number;
+}
+
+export default function Home(props:ProjectsProps)
 {
   const projects = props.projects as Project[];
   const page = props.page as number;

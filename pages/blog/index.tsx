@@ -8,8 +8,15 @@ import { Project } from "@/types/project";
 import axios from "axios";
 import { GetServerSidePropsContext } from "next";
 import { getAllArticles } from "@/services/article_service";
+import { Article } from "@/types/article";
 
-export default function Home(props: any) {
+interface BlogProps
+{
+  articles:Article[];
+  page:number;
+}
+
+export default function Home(props: BlogProps) {
   const articles = props.articles;
   let page = props.page | 1;
 
