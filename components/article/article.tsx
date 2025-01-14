@@ -4,6 +4,10 @@ import { Article, Tag } from '@/types/article';
 export let ArticleCard = (props: any) => {
     const type = props.type;
     const article = props.article as Article;
+    let url = article.image.src
+
+    if(!article.image.src.includes('data:image/'))
+        url = `/assets/images/${article.image.src}`
 
     let card = styles.card;
 
@@ -13,7 +17,8 @@ export let ArticleCard = (props: any) => {
     return (
         <div className={card} key={`${article.id}`}>
             <h3 className={styles.date}>{article.author} {new Date(article.date).toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })}</h3>
-            <div className={styles.image} style={{ backgroundImage: `url("./assets/images/${article.image.src}")` }}></div>
+            <div className={styles.image} style={{ backgroundImage: `url("${url}")` }}></div>
+            
             <div className={styles.content}>
             <ul className={styles.ul}>
                 <div style={{display:'flex', margin:'0 0 0 auto'}}>

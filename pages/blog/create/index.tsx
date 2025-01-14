@@ -4,7 +4,7 @@ import styles from '@/styles/modules/create_blog.module.css'
 import { ChangeEvent, MouseEvent, useState } from 'react'
 
 export default function CreateBlog() {
-    const [headerImage, setHeaderImage] = useState('');
+    const [headerImage, setHeaderImage] = useState('JS.jpg');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [tags, setTags] = useState<string[]>([]);

@@ -56,15 +56,12 @@
 }
 
 .description_view {
-    display: block;
     margin: auto;
     width: 600px;
-    height: 100px;
     overflow: auto;
-    resize: none;
-    background-color: var(--color2);
-    border: none;
-    outline: none;
+    word-wrap: break-word;
+    white-space: pre-line;
+    text-align: justify;
 }
 
 
@@ -94,4 +91,6 @@
 .tag:hover {
     cursor:pointer
 }
+
+
 
