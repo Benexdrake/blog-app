@@ -24,7 +24,7 @@ export let ArticleCard = (props: any) => {
                 <div style={{display:'flex', margin:'0 0 0 auto'}}>
                     {article.tags.map((tag: Tag) => {
                         return (
-                            <li><span key={`${tag.id}`} className={styles.tag} style={{ backgroundColor: tag.bgColor, color: tag.textColor }}>{tag.name}</span></li>
+                            <li key={`${tag.id}`}><span className={styles.tag} style={{ backgroundColor: tag.bgColor, color: tag.textColor }}>{tag.name}</span></li>
                         )
                     })}
                     </div>

@@ -53,7 +53,7 @@
 .description {
     padding: 8px 0;
     text-wrap: wrap;
-    max-width: 350px;
+    /* max-width: 350px; */
     color: var(--color1);
 }
 
