@@ -55,23 +55,43 @@
     resize: none;
 }
 
+.description_view {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 100px;
+    overflow: auto;
+    resize: none;
+    background-color: var(--color2);
+    border: none;
+    outline: none;
+}
+
+
+
 .tag_select {
     margin: auto;
     margin-top: 16px;
     width: 600px;
-    background-color: var(--color4);
+    background-color: var(--color1);
     border-radius: 8px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tag {
-    background-color: var(--color2);
+    background-color: var(--color4);
+    color: var(--color1);
     
     width: fit-content;
     padding: 8px;
     margin: 8px;
-    border: black solid 3px;
+    border: var(--color3) solid 3px;
     border-radius: 8px;
+}
+
+.tag:hover {
+    cursor:pointer
 }
 
