@@ -1,14 +1,15 @@
 .main {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    
+    row-gap: 48px;
 }
 
 .block {
     background-color: var(--color2);
     border-radius: 8px;
     width: 900px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .header {
