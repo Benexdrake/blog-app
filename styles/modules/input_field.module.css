@@ -1,0 +1,13 @@
+.input {
+    width: 500px;
+    font-size: 1.5rem;
+    padding: 8px;
+}
+
+.description {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 100px;
+    resize: none;
+}

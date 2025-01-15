@@ -15,9 +15,20 @@ export default function PreviewArticle(param:any)
     return (
         <div className={styles.block}>
                 <h1 className={styles.header}>Preview</h1>
-                <div className={styles.information}>
+                    <div className={styles.card}>
                     <ArticleCard article = {article}/>
+                    </div>
+                    <div>
+                        <br />
+                        <div className={styles.header_image} style={{backgroundImage:`url("${headerImage}")`}}></div>
+                        <h1>{title}</h1>
+                        <p>{description}</p>
+                        <div className={styles.tag_select}>
+                                {tags.map((x:string) => {return ( <span className={styles.tag}>{x}</span> )})}
+                        </div>
+                        <br />
+                        <hr />
+                    </div>
                 </div>
-            </div>
     )
 }
