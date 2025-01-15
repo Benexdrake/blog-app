@@ -5,35 +5,15 @@ import InputField from './input_field';
 
 export default function CreateArticleHeader(param:any)
 {
-    const {tags,setTags, setHeaderImage, setTitle, setDescription} = param;
+    const {setHeader} = param
+    const [headerImage, setHeaderImage] = useState('JS.jpg');
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+
+    let image = 'JS.jpg'
+    const [tags, setTags] = useState<string[]>([]);
 
     const [addBlock, setAddBlock] = useState<string[]>([])
-
-    const headerImageHandler = (e: ChangeEvent<HTMLInputElement>) => 
-    {
-        if (!e.target.files) return;
-
-        const file = e.target.files[0];
-
-        const reader = new FileReader();
-        reader.readAsDataURL(file)
-
-        reader.onload = () => {
-            const result = reader.result;
-            if (result)
-                setHeaderImage(result as string)
-        }
-    }
-    
-    const titleHandler = (e: ChangeEvent<HTMLInputElement>) => 
-    {
-        setTitle(e.target.value)
-    }
-
-    const descriptionHandler = (e: ChangeEvent<HTMLTextAreaElement>) => 
-    {
-        setDescription(e.target.value)
-    }
 
     const tagHandler = (e: any) => 
     {
@@ -71,7 +51,7 @@ export default function CreateArticleHeader(param:any)
         <div className={styles.block}>
                 <h1 className={styles.header}>Create</h1>
                 <div className={styles.information}>
-                    <InputField id='header'/>
+                    <InputField id='header' setImage={setHeaderImage} setTitle={setTitle} setDescription={setDescription}/>
                     <div className={styles.tag_select}>
                         <div className={styles.tag} onClick={tagHandler} key='Research'>
                             <input id='abc' type="checkbox" hidden /> Research

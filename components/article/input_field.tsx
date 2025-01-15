@@ -3,36 +3,38 @@ import { ChangeEvent, useState } from 'react';
 
 export default function InputField(props:any)
 {
-    const {id} = props;
-    const [headerImage, setHeaderImage] = useState('');
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    // const {id} = props;
+    const {setTitle, setImage, setDescription} = props;
 
     const headerImageHandler = (e: ChangeEvent<HTMLInputElement>) => 
+    {
+        if (!e.target.files) return;
+
+        const file = e.target.files[0];
+
+        const reader = new FileReader();
+        
+        reader.readAsDataURL(file)
+
+        reader.onload = () => 
         {
-            if (!e.target.files) return;
-    
-            const file = e.target.files[0];
-    
-            const reader = new FileReader();
-            reader.readAsDataURL(file)
-    
-            reader.onload = () => {
-                const result = reader.result;
-                if (result)
-                    setHeaderImage(result as string)
+            const result = reader.result;
+            if (result)
+            {
+                setImage(result as string)
             }
         }
-        
-        const titleHandler = (e: ChangeEvent<HTMLInputElement>) => 
-        {
-            setTitle(e.target.value)
-        }
+    }
     
-        const descriptionHandler = (e: ChangeEvent<HTMLTextAreaElement>) => 
-        {
-            setDescription(e.target.value)
-        }
+    const titleHandler = (e: ChangeEvent<HTMLInputElement>) => 
+    {
+        setTitle(e.target.value)
+    }
+
+    const descriptionHandler = (e: ChangeEvent<HTMLTextAreaElement>) => 
+    {
+        setDescription(e.target.value)
+    }
 
     return (
         <>

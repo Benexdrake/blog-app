@@ -3,18 +3,29 @@ import PreviewArticle from '@/components/article/preview_article';
 import styles from '@/styles/modules/create_blog.module.css'
 import { ChangeEvent, MouseEvent, useState } from 'react'
 
+export type Header =
+{
+    image:string;
+    title:string;
+    description:string;
+    tags:string[]
+}
+
 export default function CreateBlog() {
-    const [headerImage, setHeaderImage] = useState('JS.jpg');
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [tags, setTags] = useState<string[]>([]);
+    // const [headerImage, setHeaderImage] = useState('JS.jpg');
+    // const [title, setTitle] = useState('');
+    // const [description, setDescription] = useState('');
+    // const [tags, setTags] = useState<string[]>([]);
+
+    
+    const [getHeader, setHeader] = useState<Header>()
 
     return (
         <div className={styles.main}>
             <div>
-                <CreateArticleHeader tags={tags} setTags={setTags} setHeaderImage={setHeaderImage} setTitle={setTitle} setDescription={setDescription}/>
+                <CreateArticleHeader setHeader={setHeader}/>
             </div>
-            <PreviewArticle headerImage={headerImage} description={description} tags={tags} title={title}/>
+            <PreviewArticle getHeader={getHeader}/>
         </div>
     )
 }
