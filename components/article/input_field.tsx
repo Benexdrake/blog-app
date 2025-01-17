@@ -4,7 +4,7 @@ import { ChangeEvent, useState } from 'react';
 export default function InputField(props:any)
 {
     // const {id} = props;
-    const {setTitle, setImage, setDescription} = props;
+    const {setTitle, setImage, setDescription, onSubmitButton} = props;
 
     const headerImageHandler = (e: ChangeEvent<HTMLInputElement>) => 
     {
@@ -41,6 +41,7 @@ export default function InputField(props:any)
             <input className={styles.input} onChange={titleHandler} placeholder='Title' type="text" name="" id="" />
             <input className={styles.input} onChange={headerImageHandler} type="file" accept="image/png, image/jpeg"/>
             <textarea className={styles.description} onChange={descriptionHandler} name="" id="" placeholder='Enter a short Desciption...'></textarea>
+            {onSubmitButton && ( <button className={styles.submit_button} onClick={() => onSubmitButton()}>Submit</button> )}
         </>
     )
 }

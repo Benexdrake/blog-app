@@ -2,18 +2,19 @@ import styles from '@/styles/modules/create_blog.module.css'
 import { ChangeEvent, JSX, MouseEvent, useState } from 'react'
 import AddContent from './add_content';
 import InputField from './input_field';
+import PreviewArticle from './preview_article';
 
 export default function CreateArticleHeader(param:any)
 {
-    const {setHeader} = param
     const [headerImage, setHeaderImage] = useState('JS.jpg');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
-    let image = 'JS.jpg'
     const [tags, setTags] = useState<string[]>([]);
 
     const [addBlock, setAddBlock] = useState<string[]>([])
+
+    const [content, setContent] = useState([]);
 
     const tagHandler = (e: any) => 
     {
@@ -44,11 +45,14 @@ export default function CreateArticleHeader(param:any)
     const onCloseAddBlock = (id:string) =>
     {
         let filtered = addBlock.filter(x => x !== id)
+        let filteredContent = content.filter((x:any) => x.id !== id)
+        setContent([...filteredContent])
         setAddBlock(filtered);
     }
 
     return (
-        <div className={styles.block}>
+        <div className={styles.main}>
+            <div className={styles.block}>
                 <h1 className={styles.header}>Create</h1>
                 <div className={styles.information}>
                     <InputField id='header' setImage={setHeaderImage} setTitle={setTitle} setDescription={setDescription}/>
@@ -65,11 +69,13 @@ export default function CreateArticleHeader(param:any)
                     </div>
                 </div>
                 <div id='editor-block'>
-                    {addBlock.map((x:any) => {return <AddContent key={x} id={x} onCloseAddBlock={onCloseAddBlock}/>})}
+                    {addBlock.map((x:any) => {return <AddContent key={x} id={x} onCloseAddBlock={onCloseAddBlock} content={content} setContent={setContent}/>})}
                 </div>
                 <div className={styles.add_block} onClick={onClickAddBlock}>
                     <h1>+</h1>
                 </div>
             </div>
+            <PreviewArticle headerImage={headerImage} title={title} description={description} tags={tags} content={content}/>
+        </div>
     )
 }
