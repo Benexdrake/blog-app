@@ -17,6 +17,8 @@ export default function AddContent(params:any)
 
     const onSubmitButton = () => 
     {
+        // Ändern: Suche das Objekt und ändere den Inhalt, vllt durch find oder find index um let c = content c[index] = {id, title, image, description}
+
         const filteredContent = content.filter((x:any)  => x.id !== id)
         setContent([...filteredContent, {id,title,image,description}])
         

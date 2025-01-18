@@ -1,5 +1,5 @@
-import styles from '@/styles/modules/create_blog.module.css'
-import { ArticleCard } from './article';
+import styles from '@/styles/modules/blog/create/create_blog.module.css'
+import { ArticleCard } from './article_card';
 import { Article } from '@/types/article';
 
 export default function PreviewArticle(props:any)

@@ -1,4 +1,4 @@
-import { ArticleCard } from '@/components/article/article'
+import { ArticleCard } from '@/components/blog/article_card'
 import { ProjectCard } from '@/components/project/projectCard'
 import styles from '@/styles/modules/all_posts.module.css'
 import { Article } from '@/types/article'

@@ -1,0 +1,56 @@
+.information {
+    background-color: var(--color4);
+    position: relative;
+    top: -30px;
+    border-radius: 8px;
+    padding: 16px;
+    width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.input {
+    width: 500px;
+    font-size: 1.5rem;
+    padding: 8px;
+    color: var(--color2);
+}
+
+.description {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 800px;
+    height: 100px;
+    resize: none;
+    margin-bottom: 16px;
+}
+
+.description h1 {
+    color: var(--color4);
+}
+
+.tag_select {
+    margin: auto;
+    width: 600px;
+    background-color: var(--color1);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag {
+    background-color: var(--color4);
+    color: var(--color1);
+    
+    width: fit-content;
+    padding: 8px;
+    margin: 8px;
+    border: var(--color3) solid 3px;
+    border-radius: 8px;
+}
+
+.tag:hover {
+    cursor:pointer
+}

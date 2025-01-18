@@ -20,16 +20,7 @@
     text-shadow: var(--color3) 0px 10px;
 }
 
-.information {
-    background-color: var(--color4);
-    position: relative;
-    top: -30px;
-    border-radius: 8px;
-    padding: 16px;
-    width: 900px;
-    margin: auto;
-    text-align: center;
-}
+
 
 .header_image {
     width: 100%;
@@ -41,25 +32,9 @@
     border-radius: 8px;
 }
 
-.input {
-    width: 500px;
-    font-size: 1.5rem;
-    padding: 8px;
-}
 
-.description {
-    display: block;
-    margin: auto;
-    text-align: center;
-    width: 800px;
-    height: 100px;
-    resize: none;
-    margin-bottom: 48px;
-}
 
-.description h1 {
-    color: var(--color4);
-}
+
 
 .description_view {
     margin: auto;
@@ -72,31 +47,6 @@
 
 
 
-.tag_select {
-    margin: auto;
-    margin-top: 16px;
-    width: 600px;
-    background-color: var(--color1);
-    border-radius: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.tag {
-    background-color: var(--color4);
-    color: var(--color1);
-    
-    width: fit-content;
-    padding: 8px;
-    margin: 8px;
-    border: var(--color3) solid 3px;
-    border-radius: 8px;
-}
-
-.tag:hover {
-    cursor:pointer
-}
 
 .add_block {
     margin: auto;
