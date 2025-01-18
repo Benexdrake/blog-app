@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import Header from '@/components/blog/create/header';
 import PreviewBlogEntry from '@/components/blog/create/preview_blog_entry';
+import FloatMenu from '@/components/blog/create/float_menu';
 
 export default function CreateArticleHeader(param:any)
 {
@@ -34,6 +35,7 @@ export default function CreateArticleHeader(param:any)
 
     return (
         <div className={styles.main}>
+            <FloatMenu/>
             <div className={styles.block}>
                 <h1 className={styles.header}>Create</h1>
                 <Header setHeader={setHeader} header={header}/>
