@@ -1,6 +1,4 @@
 .menu {
-    height: 300px;
-    /* width: 80px; */
     background-color: var(--color4);
     position: fixed;
     top: 50%;
@@ -12,7 +10,6 @@
 }
 
 .menu:hover {
-    /* width: 200px; */
     opacity: 1.0;
     transition: opacity 1s, width 1s;
 }

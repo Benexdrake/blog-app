@@ -1,0 +1,87 @@
+.main {
+    border: 1px solid var(--color4);
+    height: 200px;
+    padding: 16px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.arrows {
+    position: relative;
+    width: 0;
+    height: 0;
+    right: -100%
+}
+
+.arrow_up {
+    position: absolute;
+    background-color: var(--color4);
+    width: 30px;
+    height: 50px;
+    border: 1px solid var(--color3);
+}
+
+.arrow_down {
+    position: absolute;
+    background-color: var(--color4);
+    width: 30px;
+    height: 50px;
+    border: 1px solid var(--color3);
+    top: 60px;
+}
+
+.backgroundImage {
+    background-color: var(--color2);
+    width: 700px;
+    border: 1px solid var(--color4);
+}
+
+.menu {
+    border: 1px solid var(--color4);
+    display: grid;
+    padding: 8px;
+    grid-template-columns: 30px 30px 30px 30px;
+    grid-template-rows: 30px 30px 30px 30px;
+    gap: 8px;
+    background-color: var(--color2);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.field {
+}
+
+.button {
+    display: flex;
+    height: 30px;
+    border: 1px solid var(--color4);
+    background-color: var(--color4);
+    color: var(--color1);
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: var(--color2);
+    color: var(--color4);
+}
+
+.button_upload {
+    height: 30px;
+    width: 145px;
+    border: 1px solid var(--color4);
+    background-color: var(--color4);
+    color: var(--color1);
+    text-align: center;
+    align-content: center;
+}
+
+.button_upload:hover {
+    background-color: var(--color2);
+    color: var(--color4);
+}

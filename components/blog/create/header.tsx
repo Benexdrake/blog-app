@@ -36,6 +36,10 @@ export default function Header(props:any)
     const descriptionHandler = (e: ChangeEvent<HTMLTextAreaElement>) => 
     {
         header.description = e.target.value
+        // e.target.style.height = (e.target.scrollHeight+10)+"px";
+        // console.log(e.target.scrollHeight);
+        // console.log(e.target.style.height);
+        
         setHeader({image:header.image, title:header.title, description:header.description, tags:header.tags})
     }
 

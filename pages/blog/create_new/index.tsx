@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Header from '@/components/blog/create/header';
 import PreviewBlogEntry from '@/components/blog/create/preview_blog_entry';
 import FloatMenu from '@/components/blog/create/float_menu';
+import CreateImage from '@/components/blog/create/elements/image';
 
 export default function CreateArticleHeader(param:any)
 {
@@ -17,6 +18,22 @@ export default function CreateArticleHeader(param:any)
 
     const [content, setContent] = useState([]);
 
+
+    const createElement = (type:string) =>
+    {
+        const create = document.getElementById('create')
+
+        if(!create) return;
+
+        switch(type)
+        {
+            case 'image':
+                console.log(type);
+                
+                break;
+        }
+
+    }
 
 
     // const onClickAddBlock = () => 
@@ -35,10 +52,13 @@ export default function CreateArticleHeader(param:any)
 
     return (
         <div className={styles.main}>
-            <FloatMenu/>
-            <div className={styles.block}>
+            <FloatMenu createElement={createElement}/>
+            <div className={styles.block} id='create'>
                 <h1 className={styles.header}>Create</h1>
                 <Header setHeader={setHeader} header={header}/>
+                <div id='add_element'>
+                    <CreateImage/>
+                </div>
 
 
             </div>
