@@ -16,3 +16,20 @@ export let getImage = (language:string) =>
             return 'https://placehold.co/600x400'
         }
 }
+
+export let fileToBase64 = async (file:any) =>
+{
+        return await new Promise((res) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file)
+
+            reader.onload = () => 
+            {
+                const result = reader.result;
+                if (result)
+                {
+                    res(result)
+                }
+            }
+        })
+}
