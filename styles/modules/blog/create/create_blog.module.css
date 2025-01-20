@@ -21,20 +21,6 @@
 }
 
 
-
-.header_image {
-    width: 100%;
-    height: 300px;
-    background-position:center;
-    background-size: cover;
-    margin-bottom: 16px;
-    border-radius: 8px;
-}
-
-
-
-
-
 .description_view {
     margin: auto;
     width: 600px;
@@ -68,12 +54,6 @@
     font-size: 5rem;
 }
 
-.card {
-    width: 500px;
-    margin: auto;
-    margin-bottom: 32px;
-}
-
 .preview_content {
     margin-top: 32px;
     background-color: var(--color2);
@@ -98,4 +78,9 @@
     padding: 32px;
     text-align: justify;
     white-space: pre-wrap;
+}
+
+.preview {
+    width: 200px;
+    height: 200px;
 }

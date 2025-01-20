@@ -35,6 +35,11 @@ body {
   margin: auto;
 }
 
+#add_elements {
+  display: grid;
+  gap: 12px;
+}
+
 @media screen and (max-width:1350px) {
   .main {
     width: 800px;

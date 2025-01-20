@@ -1,10 +1,10 @@
-import styles from '@/styles/modules/blog/create/create_blog.module.css'
+import styles from '@/styles/modules/blog/create/preview_blog.module.css'
 import { ArticleCard } from '../article_card';
 import { Article } from '@/types/article';
 
 export default function PreviewBlogEntry(props:any)
 {
-    const {header} = props;
+    const {header, children} = props;
     
     let t = header.tags.map((x:string) => {return {id:1, name:x, bgColor:'red', textColor:'white'}})
     const article:Article = {id:1, title:header.title, content:header.description, image:{src:header.image, alt:'Yes'}, teaser:'', date:new Date().toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" }), author:'Its a Me, Mario', tags:t}
@@ -16,7 +16,7 @@ export default function PreviewBlogEntry(props:any)
             <div className={styles.card}>
                     <ArticleCard article = {article}/>
             </div>
-                <div style={{backgroundColor:'var(--color2)'}}>
+                <div>
                     <div className={styles.header_image} style={{backgroundImage:`url("${header.image}")`}}></div>
                     <div className={styles.description}>
                         <h1>{header.title}</h1>
@@ -26,7 +26,7 @@ export default function PreviewBlogEntry(props:any)
                         </div>
                     </div>
                     <div style={{borderTop:'1px solid var(--color4)'}}>
-
+                        {children}
                     </div>
                 </div>
         </div>
