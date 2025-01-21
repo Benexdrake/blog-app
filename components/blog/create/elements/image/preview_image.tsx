@@ -1,8 +1,10 @@
 export default function PreviewImage(props:any)
 {
-    const {element} = props;
+    const {config} = props;
 
+    console.log(config);
+    
     return (
-        <div key={element.id} style={element.options}></div>
+        <div key={config.id} style={config.options}>{config.id}</div>
     )
 }

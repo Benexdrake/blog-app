@@ -16,25 +16,20 @@ import PreviewContent from '@/components/blog/create/elements/content/preview_co
 
 export default function CreateArticle()
 {
-
-
     const [elements, setElements] = useState<JSX.Element[]>([])
     const [header, setHeader] = useState({image:'JS.jpg', title:'', description:'', tags:[]})
-
     const [preview, setPreview] = useState(false);
     
     const createElement = (type:string) =>
     {   
         const id = crypto.randomUUID()
         let config:BlogElementConfig = {id, type, options:{}, content:''}
-
-
         let element;
 
         switch(type)
         {
             case 'image':
-                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url(/assets/images/JS.jpg)'}
+                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url(/assets/images/JS.jpg)', height:'200px', minWidth:'200px'}
                 element = <CreateImage config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
@@ -53,13 +48,9 @@ export default function CreateArticle()
     }
         
     const updateElement = (config:BlogElementConfig) =>
-    {
-        // console.log(elements);
-        
+    {   
         let index = elements.findIndex(x => x.props.config.id === config.id)
 
-
-        //switch type
         switch(config.type)
         {
             case'image':
@@ -71,8 +62,7 @@ export default function CreateArticle()
             case'content':
                 elements[index] = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
-        }
-        
+        }        
         
         setElements(elements);
     }
@@ -82,6 +72,7 @@ export default function CreateArticle()
         const newElements = elements.filter(x => x.props.config.id !== id)
         setElements([...newElements]);
     }
+    
 
     return (
         <div className={styles.main} key={'CREATE'}>
@@ -98,32 +89,29 @@ export default function CreateArticle()
                         switch(e.props.config.type)
                         {
                             case 'image':
-                                return <div key={index}><CreateImage config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
+                                return <div><CreateImage config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
                             case 'header':
-                                return <div key={index}><CreateHeader config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
+                                return <div><CreateHeader config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
                             case 'content':
-                                return <div key={index}><CreateContent config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
+                                return <div><CreateContent config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
                         }
                     })}
                 </div>
-
-
             </div>
             {preview && (
-
                 <PreviewBlogEntry header={header}>
-                    {/* {elements.map((e, index) =>  
-                    { 
-                        switch(e.type)
+                    {elements.map((e, index) =>  
+                    {   
+                        switch(e.props.config.type)
                         {
                             case 'image':
-                                return <div key={index}><PreviewImage element={e}/></div>
+                                return <div ><PreviewImage config={e.props.config}/></div>
                             case 'header':
-                                return <div key={index}><PreviewHeader/></div>
+                                return <div><PreviewHeader config={e.props.config}/></div>
                             case 'content':
-                                return <div key={index}><PreviewContent/></div>
+                                return <div><PreviewContent config={e.props.config}/></div>
                         }
-                    })} */}
+                    })}
             </PreviewBlogEntry>
             )}
         </div>
