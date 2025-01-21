@@ -58,7 +58,7 @@ export default function CreateArticle()
                             case 'image':
                                 return <div key={index}><CreateImage element={e} updateElement={updateElement} deleteElement={deleteElement}/></div>
                             case 'header':
-                                return <div key={index}><CreateHeader/></div>
+                                return <div key={index}><CreateHeader element={e} updateElement={updateElement} deleteElement={deleteElement}/></div>
                             case 'content':
                                 return <div key={index}><CreateContent/></div>
                         }

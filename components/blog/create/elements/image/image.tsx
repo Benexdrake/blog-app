@@ -1,5 +1,5 @@
 import { fileToBase64 } from '@/helpers/helper'
-import styles from '@/styles/modules/blog/create/elements/create_image.module.css'
+import styles from '@/styles/modules/blog/create/elements/image/create_image.module.css'
 import { BlogCreateElement } from '@/types/blog_create_element'
 import { ChangeEvent, useState } from 'react'
 
@@ -10,6 +10,8 @@ export default function CreateImage(props:any)
     const [getImage, setImage] = useState<string>(`/assets/images/CSharp.jpg`)
     const [getSize, setSize] = useState<string>('cover')
     const [getPosition, setPosition] = useState<string>('center')
+
+    const [cover, setCover] = useState(false);
     
     
 
@@ -31,14 +33,18 @@ export default function CreateImage(props:any)
 
     const onChangeSizeCoverHandler = (e:any) =>
     {
-        if(e.target.checked)
+        if(cover)
         {
             setSize('cover');
+            e.target.style.color = 'var(--color1)'        
         }
         else
         {
             setSize('');
+            e.target.style.color = 'var(--color2)'        
         }
+
+        setCover(!cover)
     }
 
     const onChangeImageHandler = async (e: ChangeEvent<HTMLInputElement>) => 
@@ -60,19 +66,19 @@ export default function CreateImage(props:any)
                 <div className={styles.backgroundImage} style={{backgroundImage:`url("${getImage}")`, backgroundPosition:getPosition, backgroundSize:getSize}}></div>
                 <div className={styles.menu}>
                     <div>
-                        <label>Position: </label>
-                            <select defaultValue={'center'} onChange={onChangePositionHandler}>
-                                <option value="top">Top</option>
-                                <option value="bottom">Down</option>
-                                <option value="center">Center</option>
-                                <option value="left">Left</option>
-                                <option value="right">Right</option>
-                            </select>
+                        <select defaultValue={'center'} onChange={onChangePositionHandler}>
+                            <option value="top">Top</option>
+                            <option value="bottom">Down</option>
+                            <option value="center">Center</option>
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                        </select>
                     </div>
-                    <div>
-                        <label>Size Cover: 
+                    <div className={styles.button} onClick={onChangeSizeCoverHandler}>
+                            <i className="fa-solid fa-life-ring"></i> 
+                        {/* <label>Size Cover:
                             <input type="checkbox" id={`check-${element.id}`} defaultChecked onChange={onChangeSizeCoverHandler}/>
-                        </label>
+                        </label> */}
                     </div>
 
                     <div>
