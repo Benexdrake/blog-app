@@ -13,7 +13,7 @@ export default function CreateImage(props:any)
     
     
 
-    element.options = {backgroundSize:getSize, backgroundPosition:getPosition, backgroundImage:`url("${getImage}")`, height:'200px', minWidth:'200px'}
+    element.options = {backgroundSize:getSize, backgroundPosition:getPosition, backgroundImage:`url("${getImage}")`, height:'200px', minWidth:'200px', marginBottom:'16px'}
 
     const onChangePositionHandler = (e:any) =>
     {

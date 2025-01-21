@@ -3,12 +3,11 @@ import styles from '@/styles/modules/blog/create/float_menu.module.css'
 export default function FloatMenu(props:any)
 {
 
-    const {createElement} = props
+    const {createElement, preview, setPreview} = props
 
     const onClickHandler = (type:string) =>
     {
         createElement(type)
-        
     }
 
     return (
@@ -17,11 +16,15 @@ export default function FloatMenu(props:any)
                 <li className={styles.menu_item} onClick={() => onClickHandler('image')}>
                     <i className="fa-solid fa-image"></i>
                 </li>
-                <li className={styles.menu_item} onClick={() => onClickHandler('title')}>
+                <li className={styles.menu_item} onClick={() => onClickHandler('header')}>
                 <i className="fa-solid fa-heading"></i>
                 </li>
                 <li className={styles.menu_item} onClick={() => onClickHandler('content')}>
                     <i className="fa-solid fa-paragraph"></i>
+                </li>
+                <hr />
+                <li className={styles.menu_item} onClick={() => setPreview(!preview)}>
+                    {preview ? (<i className="fa-solid fa-eye"></i>) : (<i className="fa-solid fa-eye-slash"></i>)}
                 </li>
             </ul>
         </div>

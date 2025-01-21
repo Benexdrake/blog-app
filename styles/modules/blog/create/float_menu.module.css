@@ -31,3 +31,7 @@
     margin: 8px;
     color: var(--color4);
 }
+
+.menu_list hr {
+    border-color: var(--color1);
+}

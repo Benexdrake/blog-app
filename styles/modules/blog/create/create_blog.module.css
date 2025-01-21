@@ -20,7 +20,6 @@
     text-shadow: var(--color3) 0px 10px;
 }
 
-
 .description_view {
     margin: auto;
     width: 600px;
@@ -29,8 +28,6 @@
     white-space: pre-line;
     text-align: justify;
 }
-
-
 
 
 .add_block {
