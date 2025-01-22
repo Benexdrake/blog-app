@@ -1,16 +1,9 @@
 import { fileToBase64 } from '@/helpers/helper'
 import styles from '@/styles/modules/blog/create/elements/image/create_image.module.css'
-import { BlogElementConfig } from '@/types/blog_create_element'
+import { CreateElement } from '@/types/create_element'
 import { ChangeEvent, useState } from 'react'
 
-export type CreateImageType =
-{
-    config:BlogElementConfig;
-    updateElement:Function;
-    deleteElement:Function;
-}
-
-export default function CreateImage(props:CreateImageType)
+export default function CreateImage(props:CreateElement)
 {    
     const {updateElement, deleteElement, config} = props;   
     const [force, setForce] = useState(false)

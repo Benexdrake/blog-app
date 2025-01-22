@@ -1,15 +1,8 @@
 import styles from '@/styles/modules/blog/create/elements/content/create_content.module.css'
-import { BlogElementConfig } from '@/types/blog_create_element';
-import { CSSProperties, useState } from 'react';
+import { CreateElement } from '@/types/create_element';
+import { useState } from 'react';
 
-export type CreateType =
-{
-    config:BlogElementConfig;
-    updateElement:Function;
-    deleteElement:Function;
-}
-
-export default function CreateContent(props:CreateType)
+export default function CreateContent(props:CreateElement)
 {
     const {updateElement, deleteElement, config} = props;  
 

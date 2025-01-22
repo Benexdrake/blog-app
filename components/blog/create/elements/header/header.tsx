@@ -1,15 +1,8 @@
 import styles from '@/styles/modules/blog/create/elements/header/create_header.module.css'
-import { BlogElementConfig } from '@/types/blog_create_element';
+import { CreateElement } from '@/types/create_element';
 import { useState } from 'react';
 
-export type CreateHeaderType =
-{
-    config:BlogElementConfig;
-    updateElement:Function;
-    deleteElement:Function;
-}
-
-export default function CreateHeader(props:CreateHeaderType)
+export default function CreateHeader(props:CreateElement)
 {
     const {updateElement, deleteElement, config} = props;
 

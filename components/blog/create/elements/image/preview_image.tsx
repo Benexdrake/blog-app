@@ -1,11 +1,6 @@
-import { BlogElementConfig } from "@/types/blog_create_element";
+import { PreviewElement } from "@/types/preview_element";
 
-export type Preview =
-{
-    config:BlogElementConfig
-}
-
-export default function PreviewImage(props:Preview)
+export default function PreviewImage(props:PreviewElement)
 {
     const {config} = props;
     

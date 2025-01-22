@@ -1,12 +1,7 @@
-import styles from '@/styles/modules/blog/create/elements/content/preview_create_content.module.css'
-import { BlogElementConfig } from '@/types/blog_create_element';
+import { PreviewElement } from '@/types/preview_element';
 
-export type Preview =
-{
-    config:BlogElementConfig
-}
 
-export default function PreviewContent(props:Preview)
+export default function PreviewContent(props:PreviewElement)
 {
     const {config} = props;
     return <p style={config.options}>{config.options.content}</p>
