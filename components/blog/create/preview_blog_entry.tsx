@@ -25,7 +25,7 @@ export default function PreviewBlogEntry(props:any)
                                 {header.tags.map((x:string) => {return ( <span className={styles.tag}>{x}</span> )})}
                         </div>
                     </div>
-                    <div style={{borderTop:'1px solid var(--color4)'}}>
+                    <div>
                         {children}
                     </div>
                 </div>

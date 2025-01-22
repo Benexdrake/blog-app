@@ -25,13 +25,13 @@ export default function CreateArticle()
     const createElement = (type:string) =>
     {   
         const id = crypto.randomUUID()
-        let config:BlogElementConfig = {id, type, options:{}, content:''}
+        let config:BlogElementConfig = {id, type, options:{}}
         let element;
 
         switch(type)
         {
             case 'image':
-                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url(/assets/images/JS.jpg)', height:'400px', margin:'16px 0'}
+                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url("/assets/images/JS.jpg")', height:'400px', margin:'16px 0'}
                 element = <CreateImage config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
@@ -41,18 +41,18 @@ export default function CreateArticle()
                 setElements([...elements, element])
                 break;
             case 'content':
-                config.options = {padding:'16px'}
+                config.options = {padding:'16px', whiteSpace:'pre-wrap'}
                 element = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
+            // case 'space':
+            //     element = <div style={{margin:'32px'}}/>
+            //     break;
             }
 
             // Ideen für mehr Elemente:
             /*
                 Space
                 Text mit Bild drin, links und rechts
-
-                image zu banner
-                image größer oder einfach als Option
 
             */
 
@@ -76,6 +76,9 @@ export default function CreateArticle()
             case'content':
                 elements[index] = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
+            // case 'space':
+            //     elements[index] = <div style={{margin:'32px'}}/>
+            //     break;
         }        
         
         setElements([...elements]);
@@ -86,7 +89,11 @@ export default function CreateArticle()
         const newElements = elements.filter(x => x.props.config.id !== id)
         setElements([...newElements]);
     }
-    
+
+    const configs = elements.map( x => {return x.props.config})
+    const entry = {id:'', title:header.title, description:header.description, image:header.image, tags:header.tags, elements:configs}
+    console.log(entry);
+     // Create Image Margin Error und id falsch
 
     return (
         <div className={styles.main} key={'CREATE'}>
