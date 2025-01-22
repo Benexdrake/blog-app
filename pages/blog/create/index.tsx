@@ -1,16 +1,18 @@
 import styles from '@/styles/modules/blog/create/create_blog.module.css'
 import { JSX, useState} from 'react'
 
-import Header from '@/components/blog/create/header';
-import PreviewHeader from '@/components/blog/create/elements/header/preview_header';
-import PreviewBlogEntry from '@/components/blog/create/preview_blog_entry';
-import FloatMenu from '@/components/blog/create/float_menu';
-import CreateImage from '@/components/blog/create/elements/image/image';
-
 import { BlogElementConfig } from '@/types/blog_create_element';
-import PreviewImage from '@/components/blog/create/elements/image/preview_image';
+
+import FloatMenu from '@/components/blog/create/float_menu';
+
+import Header from '@/components/blog/create/header';
+import CreateImage from '@/components/blog/create/elements/image/image';
 import CreateHeader from '@/components/blog/create/elements/header/header';
 import CreateContent from '@/components/blog/create/elements/content/content';
+
+import PreviewBlogEntry from '@/components/blog/create/preview_blog_entry';
+import PreviewImage from '@/components/blog/create/elements/image/preview_image';
+import PreviewHeader from '@/components/blog/create/elements/header/preview_header';
 import PreviewContent from '@/components/blog/create/elements/content/preview_content';
 
 
