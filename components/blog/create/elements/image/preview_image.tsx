@@ -1,10 +1,15 @@
-export default function PreviewImage(props:any)
+import { BlogElementConfig } from "@/types/blog_create_element";
+
+export type Preview =
+{
+    config:BlogElementConfig
+}
+
+export default function PreviewImage(props:Preview)
 {
     const {config} = props;
-
-    console.log(config);
     
     return (
-        <div key={config.id} style={config.options}>{config.id}</div>
+        <div key={config.id} style={config.options}></div>
     )
 }

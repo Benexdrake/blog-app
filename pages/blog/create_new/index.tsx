@@ -29,15 +29,17 @@ export default function CreateArticle()
         switch(type)
         {
             case 'image':
-                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url(/assets/images/JS.jpg)', height:'200px', minWidth:'200px'}
+                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url(/assets/images/JS.jpg)', height:'200px', minWidth:'200px', margin:'16px 0'}
                 element = <CreateImage config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
             case 'header':
+                config.options = {padding:'16px'}
                 element = <CreateHeader config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
             case 'content':
+                config.options = {padding:'16px'}
                 element = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
             }
@@ -64,7 +66,7 @@ export default function CreateArticle()
                 break;
         }        
         
-        setElements(elements);
+        setElements([...elements]);
     }
 
     const deleteElement = (id:any) =>
@@ -84,7 +86,7 @@ export default function CreateArticle()
                 </label>
                 <Header setHeader={setHeader} header={header}/>
                 <div id='add_elements'>
-                    {elements.map((e, index) => 
+                    {elements.map((e) => 
                     { 
                         switch(e.props.config.type)
                         {
@@ -100,7 +102,7 @@ export default function CreateArticle()
             </div>
             {preview && (
                 <PreviewBlogEntry header={header}>
-                    {elements.map((e, index) =>  
+                    {elements.map((e) =>  
                     {   
                         switch(e.props.config.type)
                         {
@@ -112,7 +114,7 @@ export default function CreateArticle()
                                 return <div><PreviewContent config={e.props.config}/></div>
                         }
                     })}
-            </PreviewBlogEntry>
+                </PreviewBlogEntry>
             )}
         </div>
     )

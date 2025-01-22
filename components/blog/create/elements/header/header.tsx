@@ -16,22 +16,22 @@ export default function CreateHeader(props:CreateHeaderType)
     const [force, setForce] = useState(false)
 
     const onChangeHeaderHandler = (e:any) =>
-    {  
-        config.content = e.target.value;
+    { 
+        config.options = {content:e.target.value, textAlign:config.options.textAlign, fontSize:config.options.fontSize, padding:config.options.padding}
         setForce(!force)
         updateElement(config)
     }
 
-    const onChangeAlignHandler = (align:CanvasTextAlign) =>
+    const onChangeAlignHandler = (align:any) =>
     {
-        config.options = {textAlign:align, fontSize:config.options.fontSize}
+        config.options = {textAlign:align, fontSize:config.options.fontSize, content:config.options.content, padding:config.options.padding}
         setForce(!force)
         updateElement(config)
     }
 
     const onChangeFontSizeHandler = (e:any) =>
     {
-        config.options = {textAlign:config.options.textAlign, fontSize:`${e.target.value}px`}
+        config.options = {textAlign:config.options.textAlign, fontSize:`${e.target.value}px`, content:config.options.content, padding:config.options.padding}
         setForce(!force)
         updateElement(config)
     }
@@ -42,15 +42,14 @@ export default function CreateHeader(props:CreateHeaderType)
                 <div className={styles.arrow_up} onClick={() => {deleteElement(config.id)}}>X</div>
             </div>
             <div className={styles.main}>
-                <input type="text" id={config.id} className={styles.input_header} onChange={onChangeHeaderHandler} defaultValue={config.content}/>
+                <input type="text" id={config.id} className={styles.input_header} onChange={onChangeHeaderHandler} defaultValue={config.options.content}/>
                 <div className={styles.menu}>
-                    <p>{config.id}</p>
                     <span onClick={() => onChangeAlignHandler("left")}><i className="fa-solid fa-align-left" ></i></span>
                     <span onClick={() => onChangeAlignHandler("center")}><i className="fa-solid fa-align-center"></i></span>
                     <span onClick={() => onChangeAlignHandler("right")}><i className="fa-solid fa-align-right"></i></span>
                     <input type="number" defaultValue={32} min={32} max={100} step={4} onChange={onChangeFontSizeHandler}/>
                 </div>
-                <h1 className={styles.preview} style={config.options}>{config.content || 'Title'}</h1>
+                <h1 style={config.options}>{config.options.content}</h1>
             </div>
         </div>
     )
