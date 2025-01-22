@@ -10,6 +10,8 @@ export default function CreateImage(props:CreateElement)
 
     const [cover, setCover] = useState(true)
 
+    const [banner, setBanner] = useState('fa-image')
+
     const onChangePositionHandler = (e:any) =>
     {
         if(e.target.value === 'left' || e.target.value === 'right')
@@ -44,6 +46,24 @@ export default function CreateImage(props:CreateElement)
         updateElement(config);
     }
 
+    const onChangeBannerHandler =() =>
+    {
+        let height = '400px';
+
+        if(banner == 'fa-panorama')
+            setBanner('fa-image')
+        else
+        {
+            height = '200px';
+            setBanner('fa-panorama')
+        }
+
+        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:height, minWidth:'200px'}
+
+        setForce(!force)
+        updateElement(config);
+    }
+
     return (
         <div key={props.config.id} draggable>
             <div className={styles.arrows}>
@@ -52,6 +72,11 @@ export default function CreateImage(props:CreateElement)
             <div className={styles.main}>
                 <div className={styles.backgroundImage} style={config.options}></div>
                 <div className={styles.menu}>
+                    <div>
+                    <div className={styles.button} onClick={onChangeBannerHandler}>
+                            <i className={`fa-solid ${banner}`}></i> 
+                    </div>
+                    </div>
                     <div>
                         <select defaultValue={'center'} onChange={onChangePositionHandler}>
                             <option value="top">Top</option>

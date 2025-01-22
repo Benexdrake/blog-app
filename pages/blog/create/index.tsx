@@ -29,7 +29,7 @@ export default function CreateArticle()
         switch(type)
         {
             case 'image':
-                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url(/assets/images/JS.jpg)', height:'200px', minWidth:'200px', margin:'16px 0'}
+                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url(/assets/images/JS.jpg)', height:'400px', margin:'16px 0'}
                 element = <CreateImage config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
@@ -43,6 +43,16 @@ export default function CreateArticle()
                 element = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
             }
+
+            // Ideen für mehr Elemente:
+            /*
+                Space
+                Text mit Bild drin, links und rechts
+
+                image zu banner
+                image größer oder einfach als Option
+
+            */
 
             if(!element) return;
 
