@@ -1,7 +1,7 @@
 .main {
-    border: 1px solid var(--color4);
+    /* border: 1px solid var(--color4); */
     
-    padding: 0px 32px 16px 0px;
+    /* padding: 0px 32px 16px 0px; */
 }
 
 .arrows {
@@ -40,10 +40,11 @@
     height: 200px;
     border: 1px solid var(--color4);
     background-repeat: no-repeat;
+    margin: 16 0px;
 }
 
 .menu {
-    margin-top: 8px;
+    margin: 8px;
     display: flex;
     column-gap: 16px;
     align-items: center;

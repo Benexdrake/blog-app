@@ -14,6 +14,7 @@ import PreviewBlogEntry from '@/components/blog/create/preview_blog_entry';
 import PreviewImage from '@/components/blog/create/elements/image/preview_image';
 import PreviewHeader from '@/components/blog/create/elements/header/preview_header';
 import PreviewContent from '@/components/blog/create/elements/content/preview_content';
+import Card from '@/components/blog/create/elements/card';
 
 
 export default function CreateArticle()
@@ -31,7 +32,7 @@ export default function CreateArticle()
         switch(type)
         {
             case 'image':
-                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url("/assets/images/JS.jpg")', height:'400px', margin:'16px 0'}
+                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url("/assets/images/JS.jpg")', height:'400px'}
                 element = <CreateImage config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
@@ -90,9 +91,9 @@ export default function CreateArticle()
         setElements([...newElements]);
     }
 
-    const configs = elements.map( x => {return x.props.config})
-    const entry = {id:'', title:header.title, description:header.description, image:header.image, tags:header.tags, elements:configs}
-    console.log(entry);
+    // const configs = elements.map( x => {return x.props.config})
+    // const entry = {id:'', title:header.title, description:header.description, image:header.image, tags:header.tags, elements:configs}
+    // console.log(entry);
      // Create Image Margin Error und id falsch
 
     return (
@@ -110,11 +111,11 @@ export default function CreateArticle()
                         switch(e.props.config.type)
                         {
                             case 'image':
-                                return <div><CreateImage config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
+                                return <CreateImage config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/>
                             case 'header':
-                                return <div><CreateHeader config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
+                                return <CreateHeader config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/>
                             case 'content':
-                                return <div><CreateContent config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/></div>
+                                return <CreateContent config={e.props.config} updateElement={updateElement} deleteElement={deleteElement}/>
                         }
                     })}
                 </div>

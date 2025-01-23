@@ -4,5 +4,5 @@ export type CreateElement =
 {
     config:BlogElementConfig;
     updateElement:Function;
-    deleteElement:Function;
+    deleteElement: Function;
 }

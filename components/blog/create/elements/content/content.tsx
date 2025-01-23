@@ -1,10 +1,11 @@
 import styles from '@/styles/modules/blog/create/elements/content/create_content.module.css'
 import { CreateElement } from '@/types/create_element';
 import { useState } from 'react';
+import Card from '../card';
 
 export default function CreateContent(props:CreateElement)
 {
-    const {updateElement, deleteElement, config} = props;  
+    const {deleteElement, updateElement, config} = props;  
 
     const [force, setForce] = useState(false)
 
@@ -30,10 +31,7 @@ export default function CreateContent(props:CreateElement)
     }
 
     return (
-        <div key={config.id} draggable>
-            <div className={styles.arrows}>
-                <div className={styles.arrow_up} onClick={() => {deleteElement(config.id)}}>X</div>
-            </div>
+        <Card id={config.id} type={config.type} deleteElement={deleteElement}>
             <div className={styles.main}>
                 <div className={styles.menu}>
                     <span onClick={() => onChangeAlignHandler("left")}><i className="fa-solid fa-align-left" ></i></span>
@@ -49,6 +47,6 @@ export default function CreateContent(props:CreateElement)
                     <p style={config.options}>{config.options.content}</p>
                 </div>
             </div>
-        </div>
+        </Card>
     )
 }

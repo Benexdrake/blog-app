@@ -2,10 +2,11 @@ import { fileToBase64 } from '@/helpers/helper'
 import styles from '@/styles/modules/blog/create/elements/image/create_image.module.css'
 import { CreateElement } from '@/types/create_element'
 import { ChangeEvent, useState } from 'react'
+import Card from '../card';
 
 export default function CreateImage(props:CreateElement)
 {    
-    const {updateElement, deleteElement, config} = props;   
+    const {deleteElement, updateElement, config} = props;   
     const [force, setForce] = useState(false)
 
     const [cover, setCover] = useState(true)
@@ -16,9 +17,9 @@ export default function CreateImage(props:CreateElement)
     {
         if(e.target.value === 'left' || e.target.value === 'right')
         {
-            config.options = {backgroundSize:'', backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:'200px', minWidth:'200px'}
+            config.options = {backgroundSize:'', backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:'200px'}
         }
-        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:'200px', minWidth:'200px'}
+        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:'200px'}
         setForce(!force)
         updateElement(config);
     }
@@ -27,9 +28,9 @@ export default function CreateImage(props:CreateElement)
     {
         
         if(!cover)
-            config.options = {backgroundSize:'cover', backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:'200px', minWidth:'200px'}
+            config.options = {backgroundSize:'cover', backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:config.options.height}
         else    
-            config.options = {backgroundSize:'', backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:'200px', minWidth:'200px'}
+            config.options = {backgroundSize:'', backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:config.options.height}
         
         setCover(!cover)
         setForce(!force)
@@ -41,7 +42,7 @@ export default function CreateImage(props:CreateElement)
         if(!e.target.files) return;
         const image = await fileToBase64(e.target.files[0]) as string;
 
-        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:config.options.backgroundPosition, backgroundImage:`url("${image}")`, height:'200px', minWidth:'200px'}
+        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:config.options.backgroundPosition, backgroundImage:`url("${image}")`, height:config.options.height}
         setForce(!force)
         updateElement(config);
     }
@@ -58,17 +59,14 @@ export default function CreateImage(props:CreateElement)
             setBanner('fa-panorama')
         }
 
-        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:height, minWidth:'200px'}
+        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:height}
 
         setForce(!force)
         updateElement(config);
     }
 
     return (
-        <div key={props.config.id} draggable>
-            <div className={styles.arrows}>
-                <div className={styles.arrow_up} onClick={() => {deleteElement(config.id)}}>X</div>
-            </div>
+        <Card id={config.id} type={config.type} deleteElement={deleteElement}>
             <div className={styles.main}>
                 <div className={styles.backgroundImage} style={config.options}></div>
                 <div className={styles.menu}>
@@ -96,6 +94,6 @@ export default function CreateImage(props:CreateElement)
                 </div>
 
             </div>
-        </div>
+            </Card>
     )
 }

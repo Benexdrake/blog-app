@@ -1,10 +1,11 @@
 import styles from '@/styles/modules/blog/create/elements/header/create_header.module.css'
 import { CreateElement } from '@/types/create_element';
 import { useState } from 'react';
+import Card from '../card';
 
 export default function CreateHeader(props:CreateElement)
 {
-    const {updateElement, deleteElement, config} = props;
+    const {deleteElement, updateElement, config} = props;
 
     const [force, setForce] = useState(false)
 
@@ -30,10 +31,7 @@ export default function CreateHeader(props:CreateElement)
     }
 
     return (
-        <div key={config.id} draggable>
-            <div className={styles.arrows}>
-                <div className={styles.arrow_up} onClick={() => {deleteElement(config.id)}}>X</div>
-            </div>
+        <Card id={config.id} type={config.type} deleteElement={deleteElement}>
             <div className={styles.main}>
                 <input type="text" id={config.id} className={styles.input_header} onChange={onChangeHeaderHandler} defaultValue={config.options.content}/>
                 <div className={styles.menu}>
@@ -44,6 +42,6 @@ export default function CreateHeader(props:CreateElement)
                 </div>
                 <h1 style={config.options}>{config.options.content}</h1>
             </div>
-        </div>
+        </Card>
     )
 }
