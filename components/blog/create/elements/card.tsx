@@ -6,7 +6,7 @@ export default function Card(props:any)
 
     const {id, type, deleteElement, children} = props;
     const [show, setShow] = useState('');
-    const [showButton, setShowButton] = useState('minus');
+    const [showButton, setShowButton] = useState('fa-solid fa-minus');
 
 
     let element = ''
