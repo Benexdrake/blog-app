@@ -9,7 +9,7 @@ export default function CreateImage(props:CreateElement)
     const {deleteElement, updateElement, config} = props;   
     const [force, setForce] = useState(false)
 
-    const [cover, setCover] = useState(true)
+    const [cover, setCover] = useState(false)
 
     const [banner, setBanner] = useState('fa-image')
 
@@ -17,23 +17,22 @@ export default function CreateImage(props:CreateElement)
     {
         if(e.target.value === 'left' || e.target.value === 'right')
         {
-            config.options = {backgroundSize:'', backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:'200px'}
+            config.options = {backgroundSize:'', backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:config.options.height}
         }
-        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:'200px'}
+        config.options = {backgroundSize:config.options.backgroundSize, backgroundPosition:e.target.value, backgroundImage:config.options.backgroundImage, height:config.options.height}
         setForce(!force)
         updateElement(config);
     }
 
     const onChangeSizeCoverHandler = (e:any) =>
     {
-        
         if(!cover)
             config.options = {backgroundSize:'cover', backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:config.options.height}
         else    
             config.options = {backgroundSize:'', backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:config.options.height}
         
         setCover(!cover)
-        setForce(!force)
+        // setForce(!force)
         updateElement(config);
     }
 

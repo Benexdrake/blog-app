@@ -32,7 +32,7 @@ export default function CreateArticle()
         switch(type)
         {
             case 'image':
-                config.options = {backgroundSize:'cover', backgroundPosition:'center', backgroundImage:'url("/assets/images/JS.jpg")', height:'400px'}
+                config.options = {backgroundSize:'', backgroundPosition:'center', backgroundImage:'url("/assets/images/JS.jpg")', height:'400px'}
                 element = <CreateImage config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
@@ -100,10 +100,6 @@ export default function CreateArticle()
         <div className={styles.main} key={'CREATE'}>
             <FloatMenu createElement={createElement} preview={preview} setPreview={setPreview}/>
             <div className={styles.block} id='create'>
-                <h1 className={styles.header}>Create</h1>
-                <label>
-                    Preview: <input type="checkbox" id="preview" />
-                </label>
                 <Header setHeader={setHeader} header={header}/>
                 <div id='add_elements'>
                     {elements.map((e) => 
