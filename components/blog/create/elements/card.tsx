@@ -43,7 +43,9 @@ export default function Card(props:any)
             <nav className={styles.nav}>
                 <div className={styles.button} onClick={onShowChildrenHandler}><i className={showButton}></i></div>
                 <div className={styles.element}><i className={"fa-solid fa-"+element}></i></div>
-                <div className={styles.button} onClick={() => deleteElement(id)}> <i className="fa-solid fa-xmark"></i></div>
+                { deleteElement && (
+                    <div className={styles.button} onClick={() => deleteElement(id)}> <i className="fa-solid fa-xmark"></i></div>
+                )}
             </nav>
             <section className={styles.content} style={{display:show}}>
                 {children}

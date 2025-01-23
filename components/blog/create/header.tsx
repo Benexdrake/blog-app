@@ -1,6 +1,7 @@
 import { ChangeEvent } from "react";
 
 import styles from '@/styles/modules/blog/create/header.module.css'
+import Card from "./elements/card";
 
 export default function Header(props:any)
 {
@@ -35,10 +36,7 @@ export default function Header(props:any)
 
     const descriptionHandler = (e: ChangeEvent<HTMLTextAreaElement>) => 
     {
-        header.description = e.target.value
-        // e.target.style.height = (e.target.scrollHeight+10)+"px";
-        // console.log(e.target.scrollHeight);
-        // console.log(e.target.style.height);
+        header.description = e.target.value;
         
         setHeader({image:header.image, title:header.title, description:header.description, tags:header.tags})
     }
@@ -66,21 +64,18 @@ export default function Header(props:any)
     }
 
     return (
-            <div className={styles.information}>
-                <input className={styles.input} onChange={titleHandler} placeholder='Title' type="text" name="" id="" />
-                <input className={styles.input} onChange={headerImageHandler} type="file" accept="image/png, image/jpeg"/>
-                <textarea className={styles.description} onChange={descriptionHandler} name="" id="" placeholder='Enter a short Desciption...'></textarea>
-                <div className={styles.tag_select}>
-                    <div className={styles.tag} onClick={tagHandler} key='Research'>
-                        <input id='abc' type="checkbox" hidden /> Research
-                    </div>
-                    <div className={styles.tag} onClick={tagHandler} key='Presentation'>
-                        <input id='abc' type="checkbox" hidden /> Presentation
-                    </div>
-                    <div className={styles.tag} onClick={tagHandler} key='Design'>
-                        <input id='abc' type="checkbox" hidden /> Design
-                    </div>
+        <Card>
+            <header className={styles.header}>
+                <div>
+                    <input type="text" className={styles.title}/>
                 </div>
-            </div>
+                <div>
+                    <textarea name="" id="" className={styles.content}></textarea>
+                </div>
+                <div className={styles.image}>
+                    <input type="file" name="" id="" />
+                </div>
+            </header>
+        </Card>
     )
 }
