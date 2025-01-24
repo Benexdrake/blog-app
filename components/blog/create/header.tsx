@@ -53,7 +53,6 @@ export default function Header(props:any)
             let tags_copy = [...header.tags];
             tags_copy.push(e.target.innerText)
             setHeader({image:header.image, title:header.title, description:header.description, tags:tags_copy})
-            
         }
         else
         {
@@ -65,15 +64,25 @@ export default function Header(props:any)
 
     return (
         <Card>
-            <header className={styles.header}>
+            <header>
                 <div>
-                    <input type="text" className={styles.title}/>
+                    <input type="text" className={styles.title} onChange={titleHandler}/>
                 </div>
                 <div>
-                    <textarea name="" id="" className={styles.content}></textarea>
+                    <textarea name="" id="" className={styles.content} onChange={descriptionHandler}></textarea>
                 </div>
                 <div className={styles.image}>
-                    <input type="file" name="" id="" />
+                    <input type="file" name="" id="" onChange={headerImageHandler}/>
+                </div>
+                <div className={styles.tags}>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
+                    <span className={styles.tag} onClick={tagHandler}><input type="checkbox"/> Tag1</span>
                 </div>
             </header>
         </Card>

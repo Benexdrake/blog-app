@@ -33,14 +33,14 @@ export default function CreateHeader(props:CreateElement)
     return (
         <Card id={config.id} type={config.type} deleteElement={deleteElement}>
             <div className={styles.main}>
-                <input type="text" id={config.id} className={styles.input_header} onChange={onChangeHeaderHandler} defaultValue={config.options.content}/>
                 <div className={styles.menu}>
                     <span onClick={() => onChangeAlignHandler("left")}><i className="fa-solid fa-align-left" ></i></span>
                     <span onClick={() => onChangeAlignHandler("center")}><i className="fa-solid fa-align-center"></i></span>
                     <span onClick={() => onChangeAlignHandler("right")}><i className="fa-solid fa-align-right"></i></span>
                     <input type="number" defaultValue={32} min={32} max={100} step={4} onChange={onChangeFontSizeHandler}/>
                 </div>
-                <h1 style={config.options}>{config.options.content}</h1>
+                <input type="text" id={config.id} className={styles.input_header} onChange={onChangeHeaderHandler} defaultValue={config.options.content}/>
+                <h1 className={styles.preview} style={config.options}>{config.options.content}</h1>
             </div>
         </Card>
     )

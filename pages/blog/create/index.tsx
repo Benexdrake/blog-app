@@ -14,8 +14,6 @@ import PreviewBlogEntry from '@/components/blog/create/preview_blog_entry';
 import PreviewImage from '@/components/blog/create/elements/image/preview_image';
 import PreviewHeader from '@/components/blog/create/elements/header/preview_header';
 import PreviewContent from '@/components/blog/create/elements/content/preview_content';
-import Card from '@/components/blog/create/elements/card';
-
 
 export default function CreateArticle()
 {
@@ -45,17 +43,7 @@ export default function CreateArticle()
                 config.options = {padding:'16px', whiteSpace:'pre-wrap'}
                 element = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
-            // case 'space':
-            //     element = <div style={{margin:'32px'}}/>
-            //     break;
             }
-
-            // Ideen für mehr Elemente:
-            /*
-                Space
-                Text mit Bild drin, links und rechts
-
-            */
 
             if(!element) return;
 

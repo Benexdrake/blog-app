@@ -44,7 +44,7 @@ export default function CreateContent(props:CreateElement)
                     <textarea className={styles.content} id="" onChange={onChangeContentHandler}></textarea>
                 </div>
                 <div>
-                    <p style={config.options}>{config.options.content}</p>
+                    <p className={styles.preview} style={config.options}>{config.options.content}</p>
                 </div>
             </div>
         </Card>

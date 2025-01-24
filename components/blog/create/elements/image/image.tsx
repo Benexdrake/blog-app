@@ -32,7 +32,6 @@ export default function CreateImage(props:CreateElement)
             config.options = {backgroundSize:'', backgroundPosition:config.options.backgroundPosition, backgroundImage:config.options.backgroundImage, height:config.options.height}
         
         setCover(!cover)
-        // setForce(!force)
         updateElement(config);
     }
 
@@ -67,7 +66,6 @@ export default function CreateImage(props:CreateElement)
     return (
         <Card id={config.id} type={config.type} deleteElement={deleteElement}>
             <div className={styles.main}>
-                <div className={styles.backgroundImage} style={config.options}></div>
                 <div className={styles.menu}>
                     <div>
                     <div className={styles.button} onClick={onChangeBannerHandler}>
@@ -91,7 +89,7 @@ export default function CreateImage(props:CreateElement)
                         <input type="file"  id={`file-upload-${config.id}`} accept="image/png, image/jpeg" style={{display:'none'}} onChange={onChangeImageHandler}/>
                     </div>
                 </div>
-
+                <div className={styles.backgroundImage} style={config.options}></div>
             </div>
             </Card>
     )

@@ -1,17 +1,15 @@
 .backgroundImage {
     background-color: var(--color2);
-    height: 200px;
     border: 1px solid var(--color4);
     background-repeat: no-repeat;
-    margin: 16 0px;
 }
 
 .menu {
-    margin: 8px;
+    margin-bottom: 16px;
     display: flex;
     column-gap: 16px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .menu label {
@@ -20,32 +18,32 @@
 
 .menu select {
     width: 100px;
-    background-color: var(--color4);
-    color: var(--color1);
-    border: 1px solid var(--color2);
-    padding: 4px;
+    background-color: var(--color2);
+    color: var(--color4);
+    border: 1px solid var(--color3);
+    padding: 8px;
     text-align: center;
     outline: none;
 }
 
 .menu option {
-    background-color: var(--color3);
+    background-color: var(--color2);
     color: var(--color4);
     border: none;
 }
 
 .file_upload_button {
-    border: 1px solid var(--color2);
-    background-color: var(--color4);
-    color: var(--color1);
-    padding: 6px 12px;
+    border: 1px solid var(--color3);
+    background-color: var(--color2);
+    color: var(--color4);
+    padding: 8px 12px;
     cursor: pointer;
 }
 
 .button {
-    color:var(--color1);
-    background-color: var(--color4);
-    padding: 4px 6px 4px 4px;
+    color:var(--color4);
+    background-color: var(--color2);
+    padding: 8px 8px 8px 8px;
     font-size: 1rem;
     border: 1px solid var(--color3);
 }
