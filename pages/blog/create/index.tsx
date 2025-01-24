@@ -65,9 +65,6 @@ export default function CreateArticle()
             case'content':
                 elements[index] = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
-            // case 'space':
-            //     elements[index] = <div style={{margin:'32px'}}/>
-            //     break;
         }        
         
         setElements([...elements]);
@@ -79,10 +76,10 @@ export default function CreateArticle()
         setElements([...newElements]);
     }
 
-    // const configs = elements.map( x => {return x.props.config})
-    // const entry = {id:'', title:header.title, description:header.description, image:header.image, tags:header.tags, elements:configs}
-    // console.log(entry);
-     // Create Image Margin Error und id falsch
+    const sortElements = () =>
+    {
+        
+    }
 
     return (
         <div className={styles.main} key={'CREATE'}>
