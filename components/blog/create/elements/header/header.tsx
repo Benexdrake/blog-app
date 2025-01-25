@@ -11,21 +11,21 @@ export default function CreateHeader(props:CreateElement)
 
     const onChangeHeaderHandler = (e:any) =>
     { 
-        config.options = {content:e.target.value, textAlign:config.options.textAlign, fontSize:config.options.fontSize, padding:config.options.padding}
+        config.options = {content:e.target.value, textAlign:config.options.textAlign, fontSize:config.options.fontSize}
         setForce(!force)
         updateElement(config)
     }
 
     const onChangeAlignHandler = (align:any) =>
     {
-        config.options = {textAlign:align, fontSize:config.options.fontSize, content:config.options.content, padding:config.options.padding}
+        config.options = {textAlign:align, fontSize:config.options.fontSize, content:config.options.content}
         setForce(!force)
         updateElement(config)
     }
 
     const onChangeFontSizeHandler = (e:any) =>
     {
-        config.options = {textAlign:config.options.textAlign, fontSize:`${e.target.value}px`, content:config.options.content, padding:config.options.padding}
+        config.options = {textAlign:config.options.textAlign, fontSize:`${e.target.value}px`, content:config.options.content}
         setForce(!force)
         updateElement(config)
     }

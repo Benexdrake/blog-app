@@ -27,4 +27,6 @@
 
 .preview {
     color: var(--color4);
+    white-space: pre-wrap;
+    padding: 16px;
 }

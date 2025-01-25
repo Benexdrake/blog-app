@@ -27,4 +27,5 @@
 
 .preview {
     color: var(--color4);
+    padding: 16px;
 }

@@ -3,7 +3,7 @@ import styles from '@/styles/modules/blog/create/float_menu.module.css'
 export default function FloatMenu(props:any)
 {
 
-    const {createElement, preview, setPreview} = props
+    const {createElement, preview, setPreview, submit} = props
 
     const onClickHandler = (type:string) =>
     {
@@ -25,6 +25,10 @@ export default function FloatMenu(props:any)
                 <hr />
                 <li className={styles.menu_item} onClick={() => setPreview(!preview)}>
                     {preview ? (<i className="fa-solid fa-eye"></i>) : (<i className="fa-solid fa-eye-slash"></i>)}
+                </li>
+                <hr />
+                <li className={styles.menu_item} onClick={() => submit()}>
+                    <i className="fa-solid fa-share"></i>
                 </li>
             </ul>
         </div>

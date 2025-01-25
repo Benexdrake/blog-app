@@ -20,6 +20,15 @@ export default function CreateArticle()
     const [elements, setElements] = useState<JSX.Element[]>([])
     const [header, setHeader] = useState({image:'JS.jpg', title:'', description:'', tags:[]})
     const [preview, setPreview] = useState(false);
+
+    const submit = () =>
+    {
+        const id = crypto.randomUUID()
+        const e = elements.map(x => {return x.props.config})
+        const new_article = {id, image:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
+
+        // Öffne Modal und frage, ob dies abgeschickt werden soll oder nicht
+    }
     
     const createElement = (type:string) =>
     {   
@@ -35,12 +44,12 @@ export default function CreateArticle()
                 setElements([...elements, element])
                 break;
             case 'header':
-                config.options = {padding:'16px'}
+                config.options = {fontSize:'32px', textAlign:'left'}
                 element = <CreateHeader config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 setElements([...elements, element])
                 break;
             case 'content':
-                config.options = {padding:'16px', whiteSpace:'pre-wrap'}
+                config.options = {fontSize:'16px', textAlign:'left'}
                 element = <CreateContent config={config} updateElement={() => {}} deleteElement={() => {}}/>
                 break;
             }
@@ -83,7 +92,7 @@ export default function CreateArticle()
 
     return (
         <div className={styles.main} key={'CREATE'}>
-            <FloatMenu createElement={createElement} preview={preview} setPreview={setPreview}/>
+            <FloatMenu createElement={createElement} preview={preview} setPreview={setPreview} submit={submit}/>
             <div className={styles.block} id='create'>
                 <Header setHeader={setHeader} header={header}/>
                 <div id='add_elements'>
