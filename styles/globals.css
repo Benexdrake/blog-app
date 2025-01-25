@@ -44,7 +44,6 @@ body {
 
 #add_elements {
   display: grid;
-  gap: 12px;
 }
 
 @media screen and (max-width:1350px) {
