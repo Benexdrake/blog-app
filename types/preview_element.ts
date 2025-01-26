@@ -1,4 +1,4 @@
-import { BlogElementConfig } from "./blog_create_element"
+import { BlogElementConfig } from "./blog_element_config"
 
 export type PreviewElement =
 {

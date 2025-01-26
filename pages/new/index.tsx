@@ -1,7 +1,10 @@
 import styles from '@/styles/modules/blog/create/create_blog.module.css'
 import { JSX, useState} from 'react'
 
-import { BlogElementConfig } from '@/types/blog_create_element';
+import { createArticle } from '@/data/db_context';
+
+import { BlogElementConfig } from '@/types/blog_element_config';
+import {CreateArticle} from '@/types/create_article';
 
 import FloatMenu from '@/components/blog/create/float_menu';
 
@@ -15,19 +18,19 @@ import PreviewImage from '@/components/blog/create/elements/image/preview_image'
 import PreviewHeader from '@/components/blog/create/elements/header/preview_header';
 import PreviewContent from '@/components/blog/create/elements/content/preview_content';
 
-export default function CreateArticle()
+export default function _()
 {
     const [elements, setElements] = useState<JSX.Element[]>([])
     const [header, setHeader] = useState({image:'JS.jpg', title:'', description:'', tags:[]})
     const [preview, setPreview] = useState(false);
 
-    const submit = () =>
+    const submit = async () =>
     {
         const id = crypto.randomUUID()
         const e = elements.map(x => {return x.props.config})
-        const new_article = {id, image:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
+        const new_article:CreateArticle = {id, headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
 
-        // Öffne Modal und frage, ob dies abgeschickt werden soll oder nicht
+        await createArticle(new_article);
     }
     
     const createElement = (type:string) =>
