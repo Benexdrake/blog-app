@@ -1,0 +1,13 @@
+.header {
+    font-size: 8rem;
+    text-align: center;
+    color: var(--color4);
+    margin: 40px 0;
+    text-transform: uppercase;
+    text-shadow: var(--color3) 0px 10px 5px;
+}
+
+.hr {
+    color: var(--color4);
+    box-shadow: var(--color3) 0px 0px 5px 2px;
+}

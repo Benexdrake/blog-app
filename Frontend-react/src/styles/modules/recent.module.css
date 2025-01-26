@@ -1,0 +1,34 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 16px;
+}
+
+.first {
+    height: 400px;
+}
+
+
+.sub {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 16px;
+}
+
+.title {
+    color: var(--color4);
+    padding: 12px 0;
+}
+
+@media screen and (max-width:1350px) {
+    .main {
+        display: block;
+    }
+
+    .sub {
+        margin: 16px 0;
+    }
+    
+}

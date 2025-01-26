@@ -1,24 +1,19 @@
 {
   "name": "blog-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "dev": "(open http://localhost:3000 || cmd.exe /c start http://localhost:3000) && next dev",
-    "build": "next build",
-    "start": "next start"
+    "install": "npm install concurrently && concurrently \"npm run install:frontend\"",
+    "install:frontend": "cd ./frontend && npm install",
+    "install:backend": "cd ./backend",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "cd ./Frontend && npm run dev",
+    "start:backend": ""
   },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "axios": "^1.7.9",
-    "net": "^1.0.2",
-    "next": "15.1.4",
-    "octokit": "^4.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "typescript": "^5"
+    "concurrently": "^9.1.2"
   }
 }
