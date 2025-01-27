@@ -8,7 +8,7 @@ export let ArticleCard = (props: any) => {
     
 
     if(!article.image.src.includes('data:image/'))
-        url = `../../assets/images/${article.image.src}`
+        url = `assets/images/${article.image.src}`
     
 
     let card = styles.card;
