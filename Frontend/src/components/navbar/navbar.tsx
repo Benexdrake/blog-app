@@ -1,4 +1,5 @@
 import styles from '@/styles/modules/navbar.module.css';
+import { Link } from 'react-router-dom';
 
 export let Navbar = () =>
 {
@@ -6,12 +7,12 @@ export let Navbar = () =>
         <nav className={styles.navbar}>
             <div className={styles.user_field}></div>
             <ul className={styles.links}>
-                <a href={'/'}>
+                <Link to={'/'}>
                     <li><i className="fa-solid fa-house"></i></li>
-                </a>
-                <a href={'/new'}>
+                </Link>
+                <Link to={'/new'}>
                     <li><i className="fa-solid fa-plus"></i></li>
-                </a>
+                </Link>  
             </ul>
             <button className={styles.button}>LOGIN</button>
         </nav>
