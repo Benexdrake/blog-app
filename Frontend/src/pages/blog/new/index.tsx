@@ -30,6 +30,7 @@ export default function New()
         const new_article:CreateArticle = {id, headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
 
         await sendArticle(new_article)
+        // Send to /
     }
     
     const createElement = (type:string) =>
