@@ -1,10 +1,8 @@
 import styles from '@/styles/modules/blog/create/create_blog.module.css'
 import { JSX, useState} from 'react'
 
-// import { createArticle } from '@/data/db_context';
-
 import { BlogElementConfig } from '@/types/blog_element_config';
-// import {CreateArticle} from '../../types/create_article';
+import {CreateArticle} from '@/types/create_article';
 
 import FloatMenu from '@/components/blog/create/float_menu';
 
@@ -17,6 +15,7 @@ import PreviewBlogEntry from '@/components/blog/create/preview_blog_entry';
 import PreviewImage from '@/components/blog/create/elements/image/preview_image';
 import PreviewHeader from '@/components/blog/create/elements/header/preview_header';
 import PreviewContent from '@/components/blog/create/elements/content/preview_content';
+import { sendArticle } from '@/services/article_service';
 
 export default function New()
 {
@@ -26,11 +25,11 @@ export default function New()
 
     const submit = async () =>
     {
-        // const id = crypto.randomUUID()
-        // const e = elements.map(x => {return x.props.config})
-        // const new_article:CreateArticle = {id, headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
+        const id = crypto.randomUUID()
+        const e = elements.map(x => {return x.props.config})
+        const new_article:CreateArticle = {id, headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
 
-        // await createArticle(new_article);
+        await sendArticle(new_article)
     }
     
     const createElement = (type:string) =>

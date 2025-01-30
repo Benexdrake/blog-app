@@ -2,8 +2,8 @@ import { BlogElementConfig } from "./blog_element_config"
 
 export type Article =
 {
-    id:number
+    id:string
     title:string
-    content:string
-    configs:BlogElementConfig[]
+    description:string
+    elements:BlogElementConfig[]
 }
