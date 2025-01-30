@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "install": "npm install concurrently && concurrently \"npm run install:frontend\"",
-    "install:frontend": "cd ./frontend && npm install",
-    "install:backend": "cd ./backend",
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "cd ./Frontend && npm run dev",
     "start:backend": ""

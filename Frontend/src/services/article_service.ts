@@ -1,3 +1,5 @@
+import { Article } from "@/types/article";
+
 export let getAllArticles = async (url:string) =>
 {
   console.log(url);
@@ -14,6 +16,11 @@ export const getArticleByID = async (url:string, id:string) =>
 export const getArticlesByUserID = async (url:string, userId:string) =>
 {
   return await fetch(`http://${url}/api/blog/${userId}`)
+}
+
+export const sendArticle = (article:Article) =>
+{
+  // Send article to api and get a response
 }
 
 const articles = [
