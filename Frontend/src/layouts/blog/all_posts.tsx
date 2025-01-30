@@ -11,8 +11,6 @@ export let AllPosts = (props:AllPostsType) =>
 {
     const articles = props.articles as Article[]
 
-    console.log('WHAT?:',props.articles);
-
     return (
         <div key='ALLPOSTS'>
             {articles && (

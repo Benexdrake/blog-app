@@ -15,12 +15,11 @@ const Blog = () =>
   {
     const fetchData = async () =>
     {
-      const a = await getAllArticles('');
-      setArticles(a);
+      setArticles(await getAllArticles());
     }
     fetchData();
 
-  },[articles]);
+  },[]);
 
   
 

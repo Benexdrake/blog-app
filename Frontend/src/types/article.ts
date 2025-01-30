@@ -10,3 +10,5 @@ export type Article =
     tags:string[]
     elements:BlogElementConfig[]
 }
+
+// Author fehlt noch

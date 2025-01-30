@@ -27,9 +27,6 @@ app.post('/articles', async (req,res) =>
     const article = req.body
     
     if(!article) return res.status(200).send('..!..')
-
-    console.log(article);
-    
     
     await model.create(article)
     return res.status(200).send(article)

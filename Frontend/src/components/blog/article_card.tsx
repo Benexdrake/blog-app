@@ -1,15 +1,14 @@
 import styles from '@/styles/modules/card.module.css';
-import { Article, Tag } from '@/types/article';
+import { Article } from '@/types/article';
 
-export let ArticleCard = (props: any) => {
-    const type = props.type;
-    const article = props.article as Article;
-    let url = article.image.src;
-    
+type ArticleCardType =
+{
+    article:Article,
+    type:number
+}
 
-    if(!article.image.src.includes('data:image/'))
-        url = `assets/images/${article.image.src}`
-    
+export let ArticleCard = (props: ArticleCardType) => {
+    const {article, type} = props;
 
     let card = styles.card;
 
@@ -18,21 +17,21 @@ export let ArticleCard = (props: any) => {
 
     return (
         <div className={card} key={`${article.id}`}>
-            <h3 className={styles.date}>{article.author} {new Date(article.date).toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })}</h3>
-            <div className={styles.image} style={{ backgroundImage: `url("${url}")` }}></div>
+            {/* <h3 className={styles.date}>{article.author} {new Date(article.date).toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })}</h3> */}
+            <div className={styles.image} style={{ backgroundImage: `url("${article.headerImage}")` }}></div>
             
             <div className={styles.content}>
             <ul className={styles.ul}>
                 <div style={{display:'flex', margin:'0 0 0 auto'}}>
-                    {article.tags.map((tag: Tag) => {
+                    {article.tags.map((tag: string) => {
                         return (
-                            <li key={`${tag.id+tag.name}`}><span className={styles.tag} style={{ backgroundColor: tag.bgColor, color: tag.textColor }}>{tag.name}</span></li>
+                            <li key={`${crypto.randomUUID()}`}><span className={styles.tag} >{tag}</span></li>
                         )
                     })}
                     </div>
                 </ul>
                 <h3 className={styles.title}>{article.title}</h3>
-                <p className={styles.description}>{article.content}</p>
+                <p className={styles.description}>{article.description}</p>
                 
             </div>
         </div>
