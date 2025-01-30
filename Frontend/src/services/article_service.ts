@@ -1,11 +1,12 @@
 import { Article } from "@/types/article";
+import axios from "axios";
+// dotenv.config();
 
-export let getAllArticles = async (url:string) =>
+const api_url = `${import.meta.env.VITE_API}/articles`
+
+export let getAllArticles = async () =>
 {
-  console.log(url);
-  
-  // return await fetch(`http://${url}/api/blog`).then(x => {return x.json()})
-  return articles;
+  return await axios.get(api_url).then(x => {return x.data})
 }
 
 export const getArticleByID = async (url:string, id:string) =>
@@ -19,10 +20,6 @@ export const getArticlesByUserID = async (url:string, userId:string) =>
 }
 
 export const sendArticle = async (article:Article) =>
-{
-  articles.push(article)
-  console.log(articles);
-  
+{ 
+  await axios.post(api_url, article)
 }
-
-const articles:Article[] = []

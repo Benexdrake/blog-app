@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "open http:localhost:3000 && node --watch ./src/main.js"
+    "dev": "node --watch ./src/main.js"
   },
   "author": "",
   "license": "ISC",

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "cd ./Frontend && npm run dev",
-    "start:backend": ""
+    "start:backend": "cd ./Backend && npm run dev"
   },
   "author": "",
   "license": "ISC",

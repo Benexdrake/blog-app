@@ -2,7 +2,6 @@ import styles from '@/styles/modules/blog/create/create_blog.module.css'
 import { JSX, useState} from 'react'
 
 import { BlogElementConfig } from '@/types/blog_element_config';
-import {CreateArticle} from '@/types/create_article';
 
 import FloatMenu from '@/components/blog/create/float_menu';
 
@@ -16,6 +15,7 @@ import PreviewImage from '@/components/blog/create/elements/image/preview_image'
 import PreviewHeader from '@/components/blog/create/elements/header/preview_header';
 import PreviewContent from '@/components/blog/create/elements/content/preview_content';
 import { sendArticle } from '@/services/article_service';
+import { Article } from '@/types/article';
 
 export default function New()
 {
@@ -27,7 +27,7 @@ export default function New()
     {
         const id = crypto.randomUUID()
         const e = elements.map(x => {return x.props.config})
-        const new_article:CreateArticle = {id, headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
+        const new_article:Article = {id, headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
 
         await sendArticle(new_article)
         // Send to /
