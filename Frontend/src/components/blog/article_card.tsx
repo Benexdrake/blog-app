@@ -16,8 +16,10 @@ export let ArticleCard = (props: ArticleCardType) => {
         card += ' ' + styles.card_vertical;
 
     return (
+        <>
+        {article && ( 
         <div className={card} key={`${article.id}`}>
-            {/* <h3 className={styles.date}>{article.author} {new Date(article.date).toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })}</h3> */}
+            <h3 className={styles.date}>{article.user.name} {new Date(article.date).toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })}</h3>
             <div className={styles.image} style={{ backgroundImage: `url("${article.headerImage}")` }}></div>
             
             <div className={styles.content}>
@@ -35,5 +37,7 @@ export let ArticleCard = (props: ArticleCardType) => {
                 
             </div>
         </div>
+    )}
+    </>
     );
 }

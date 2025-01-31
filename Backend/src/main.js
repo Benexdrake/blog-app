@@ -9,7 +9,7 @@ dotenv.config();
 const model = articleModel();
 
 const app = express();
-app.use(express.json())
+app.use(express.json({limit:'50mb'}))
 app.use(cors())
 
 const PORT = process.env.PORT || 8000
@@ -19,6 +19,13 @@ app.listen(PORT, () => console.log('Server is running...'));
 app.get('/articles', async (req, res) => 
 {
     const data = await model.find();
+    return res.status(200).send(data)
+})
+
+app.get('/articles/cards', async (req, res) => 
+{
+    const data = await model.find().select('-elements');
+
     return res.status(200).send(data)
 })
 

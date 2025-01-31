@@ -27,7 +27,7 @@ export default function New()
     {
         const id = crypto.randomUUID()
         const e = elements.map(x => {return x.props.config})
-        const new_article:Article = {id, headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e}
+        const new_article:Article = {id, date:new Date(), headerImage:header.image, title: header.title, description:header.description, tags:header.tags, elements:e, user:{id:"1", name:"BeneX Drake"}}
 
         await sendArticle(new_article)
         // Send to /

@@ -4,9 +4,9 @@ import axios from "axios";
 
 const api_url = `${import.meta.env.VITE_API}/articles`
 
-export let getAllArticles = async () =>
+export let getAllArticleCards = async () =>
 {
-  return await axios.get(api_url).then(x => {return x.data})
+  return await axios.get(api_url+"/cards").then(x => {return x.data})
 }
 
 export const getArticleByID = async (url:string, id:string) =>

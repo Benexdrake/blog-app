@@ -17,6 +17,11 @@ export const articleModel = () =>
         headerImage:String,
         description:String,
         tags:[String],
+        date:Date,
+        user:{
+            id:String,
+            name:String
+        },
         elements:Object
     });
     

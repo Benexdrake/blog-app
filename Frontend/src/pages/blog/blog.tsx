@@ -3,7 +3,7 @@ import { Header } from '@/components/header/header'
 import { RecentPosts } from '@/layouts/blog/recent_posts';
 import { AllPosts } from '@/layouts/blog/all_posts';
 import { useEffect, useState } from 'react';
-import { getAllArticles } from '@/services/article_service';
+import { getAllArticleCards } from '@/services/article_service';
 import { Article } from '@/types/article';
 
 const Blog = () =>
@@ -15,13 +15,11 @@ const Blog = () =>
   {
     const fetchData = async () =>
     {
-      setArticles(await getAllArticles());
+      setArticles(await getAllArticleCards());
     }
     fetchData();
 
   },[]);
-
-  
 
   return (
     <div id='main'>
