@@ -11,11 +11,11 @@ const Blog = () =>
   const [articles, setArticles] = useState<Article[]>([])
   let page = 1;
 
-  useEffect( () => 
+  useEffect(() => 
   {
     const fetchData = async () =>
     {
-      setArticles(await getAllArticleCards());
+      setArticles(await getAllArticleCards())
     }
     fetchData();
 
